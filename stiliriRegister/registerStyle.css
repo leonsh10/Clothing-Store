@@ -1,17 +1,22 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: sans-serif;  
+}
+#image{
     background-color: gray;
     background: url(../imagesLogin/Backround.jpg) no-repeat ;
     background-size:cover;
     background-position: center;
-    font-family: sans-serif;
-    
+    width:100%;
+    height:625px;
 }
+
 #mainForm{
     opacity:87%;
 }
-.loginbox{
+
+.Registerbox{
     width: 320px;
     height: 420px;
     background: rgb(26, 26, 26);
@@ -42,18 +47,18 @@ h1{
     font-size: 22px;
 }
 
-.loginbox p{
+.Registerbox p{
     margin: 0;
     padding: 0;
     font-weight: bold;
 }
 
-.loginbox input{
+.Registerbox input{
     width: 100%;
     margin-bottom: 20px;
 }
 
-.loginbox input[type="text"], input[type="password"]
+.Registerbox input[type="text"], input[type="password"],input[type="email"]
 {
     border: none;
     border-bottom: 1px solid #fff;
@@ -63,7 +68,7 @@ h1{
     color: #fff;
     font-size: 16px;
 }
-.loginbox input[type="submit"]
+.Registerbox input[type="submit"]
 {
     border: none;
     outline: none;
@@ -73,33 +78,31 @@ h1{
     font-size: 18px;
     border-radius: 20px;
 }
-.loginbox input[type="submit"]:hover
+.Registerbox input[type="submit"]:hover
 {
     cursor: pointer;
     background: #ffc107;
     color: #000;
 }
-.loginbox a{
+.Registerbox a{
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
     color: darkgrey;
 }
 
-.loginbox a:hover
+.Registerbox a:hover
 {
     color: #ffc107;
 }
-
-
 
 .background{
 
     opacity: 0.5;
 }
 
-
 /*
+HEADERIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 */
 
 .listaHeader a{
@@ -110,6 +113,7 @@ h1{
     width: 70%;
     height:100%;
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     align-content: center;
     align-items: center;
@@ -132,10 +136,14 @@ h1{
     display: flex;  
     align-content: center;
     align-items: center;
-    margin:10px;
+    margin-top:10px;
 }
 
-
+/* #headmUL li img{
+    width:150px;
+    height:50px;
+    
+} */
 
 #headmUL{
     display:flex;
