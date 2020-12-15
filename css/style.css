@@ -134,7 +134,7 @@ form.example input[type=text] {
     float: right;
     width: 77%;
     height:7px;
-    background: #f3f3f3;
+    background: whitesmoke;
     border:2px solid rgb(185, 185, 185,1);
     border-radius: 15px;
     color:	#475272;
@@ -358,7 +358,7 @@ align-items: center;
 
 #divLD *{
     margin:15px 0px;
-    font-family:Open Sans;;
+    font-family:Open Sans;
     font-weight: 300;
 }
 
