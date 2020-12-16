@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="stiliriRegister/registerStyle.css">
-    </head>
 
-    <body>
-        <div id="image">
+<head>
+    <link rel="stylesheet" href="stiliriRegister/registerStyle.css">
+    <script src="js/validimiRegister.js"></script>
+</head>
+
+<body>
+    <div id="image">
         <header>
             <div id="headerMajtas">
-                    <ul id="headmUL">
-                        
-                        <li class="listaHeader"><a href="index.html">HOME</a></li>
+                <ul id="headmUL">
+
+                    <li class="listaHeader"><a href="index.html">HOME</a></li>
                     <li class="listaHeader"><a href="#">SHOP</a></li>
-                    
-                   
-                    </ul>
+
+
+                </ul>
             </div>
-    
+
             <div id="headerDjathtas">
                 <ul id="headdUL">
-                      <li>
+                    <li>
                     </li>
                     <li class="listaHeader"><a href="aboutUs.html">ABOUT</a></li>
                     <li class="listaHeader"><a href="#">NEWS</a></li>
@@ -27,23 +29,25 @@
                     <li class="listaHeader"><a href="login.html">LOGIN</a></li>
                 </ul>
             </div>
+            
         </header>
-    
-                    <form id="mainForm" action="">
-                        <div class="register forms hidden">
-                            <div class="Registerbox">
-                                <img src="imagesLogin/avatar.jpg" class="avatar">
-                                <h1>Register</h1>
-                                <p>Username</p>
-                                <input type="text" class="inputi" name="" placeholder="Enter Username">
-                                <p>Email</p>
-                                <input type="email" class="inputi" name="" placeholder="shop@gmail.com">
-                                <p>Password</p>
-                                <input type="password" class="inputi" name="" placeholder="Enter Password">
-                                <input type="submit" class="inputi submit" name="" value="Register">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-    </body>
+
+        <div class="Registerbox">
+            <form id="mainForm" action="">
+
+
+                <img src="imagesLogin/avatar.jpg" class="avatar">
+                <h1>Register</h1>
+                <p>Username</p>
+                <input type="text" id="user" size="15" class="inputi" placeholder="Enter Username">
+                <p>Email</p>
+                <input type="email" id="emaili" class="inputi" name="" placeholder="shop@gmail.com">
+                <p>Password</p>
+                <input type="password" id="pass" size="15" class="inputi"  placeholder="Enter Password">
+                <input type="submit" id="btn-submit" class="inputi submit"  value="Register">
+            </form>
+        </div>
+    </div>
+</body>
+
 </html>

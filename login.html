@@ -1,23 +1,25 @@
 <html>
+
 <head>
-    <script src="js/login.js"></script>
-<title>Login Form Design</title>
+    <title>Login Form Design</title>
     <link rel="stylesheet" type="text/css" href="stilizimiLogin/Style.css">
+    <script src="js/validimiLogin.js"></script>
+
 <body>
     <header>
         <div id="headerMajtas">
-                <ul id="headmUL">
-                    
-                    <li class="listaHeader"><a href="index.html">HOME</a></li>
+            <ul id="headmUL">
+
+                <li class="listaHeader"><a href="index.html">HOME</a></li>
                 <li class="listaHeader"><a href="#">SHOP</a></li>
-                
-               
-                </ul>
+
+
+            </ul>
         </div>
 
         <div id="headerDjathtas">
             <ul id="headdUL">
-                  <li>
+                <li>
                 </li>
                 <li class="listaHeader"><a href="aboutUs.html">ABOUT</a></li>
                 <li class="listaHeader"><a href="#">NEWS</a></li>
@@ -27,28 +29,29 @@
         </div>
     </header>
 
-        
-            <form id="mainForm" action="">
-                <div class="login forms form-style">
-                    <div class="loginbox">
-                        <img src="imagesLogin/avatar.jpg" class="avatar">
-                        <h1>Login</h1>
-                        <p>Username</p>
-                        <input type="text" class="inputi" name="" placeholder="Enter Username">
-                        <p>Password</p>
-                        <input type="password" class="inputi" name="" placeholder="Enter Password">
-                        <input type="submit" class="inputi submit" name="" value="Login">
-                        <a href="#">Forgot your password?</a><br>
-                        <a href="register.html" >Don't have an account?</a>
-                    </div>
-                </div>
-            </form>
-        
-        
-        
-        
+
+    <div class="loginbox">
+        <form id="mainForm">
+
+
+            <img src="imagesLogin/avatar.jpg" class="avatar">
+            <h1>Login</h1>
+            <p>Username</p>
+            <input type="text" id="user" size="15" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" id="pass" size="15" placeholder="Enter Password">
+            <input type="submit" id="submit-btn"  value="Login">
+            <a href="#">Forgot your password?</a><br>
+            <a href="register.html">Don't have an account?</a>
+        </form>
+    </div>
+
+
+
+
+
 
 </body>
-
 </head>
+
 </html>
