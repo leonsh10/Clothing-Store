@@ -19,6 +19,13 @@ ngjarja.preventDefault();
             return false;
         }
 
+
+        if(emaill.value===""){
+            alert("Ju lutem shtoni email.");
+            emaill.focus();
+            return false;
+        }
+
         if(password.value ===""){
             alert("Ju lutem shtoni Password.");
             password.focus();
@@ -28,15 +35,6 @@ ngjarja.preventDefault();
         if(password.value.length > 12 || password.value.length < 6){
             alert("Password duhet te jete 6 deri 12 karaktere.");
             password.focus();
-            return false;
-        }
-        
-
-
-
-        if(emaill.value===""){
-            alert("Ju lutem shtoni email.");
-            emaill.focus();
             return false;
         }
 

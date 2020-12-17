@@ -57,6 +57,7 @@ padding: 12px 50px;
 border-radius: 20px;
 cursor: pointer;
 transition: 0.5s;
+outline:none;
 }
 .contact-form-btn:hover{
     background: #b38706;
