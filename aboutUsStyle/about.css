@@ -102,6 +102,7 @@ form.example input[type=text] {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
 #titulliMain h2{
@@ -119,7 +120,7 @@ form.example input[type=text] {
     font-family: 'Times New Roman', Times, serif;
     color:rgb(173,173,173);
     font-weight: normal;
-    margin-top:10px;
+    margin-top:18px;
     
 }
 
@@ -150,6 +151,7 @@ form.example input[type=text] {
     font-family: 'Times New Roman', Times, serif;
     color:rgb(173,173,173);
     text-align: center;
+    margin-top:4px;
 }
 
 

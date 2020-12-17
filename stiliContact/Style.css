@@ -1,0 +1,139 @@
+*{
+margin:0;
+padding: 0;
+}
+
+body{
+    background: url(../fotoProjektit/Contact.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.contact-section h1{
+
+    text-align: center;
+    color: #ddd;
+    font-family: "montserrat", sans-serif;
+
+}
+.border{
+    width: 100px;
+    height: 10px;
+    background: #ffc107;
+    margin:40px auto;
+} 
+.contact-form{
+max-width: 600px;
+margin: auto;
+padding: 0 10px;
+overflow: hidden;
+}
+.contact-form-text{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    background: #111;
+    padding: 20px 40px;
+    outline: none;
+    color: #ddd;
+    transition:0.5s;
+    font-family: "montserrat", sans-serif;
+}
+.contact-form-text:focus{
+    box-shadow: 0 0 10px 4px #ffc107;
+}
+textarea.contact-form-text{
+    resize: none;
+    height: 120px;
+}
+.contact-form-btn{
+float: right;
+border: 0;
+background: #ffc107;
+color: #fff;
+padding: 12px 50px;
+border-radius: 20px;
+cursor: pointer;
+transition: 0.5s;
+}
+.contact-form-btn:hover{
+    background: #b38706;
+}
+
+.contact-section{
+    margin-top:42px;
+}
+
+/*
+headeri
+*/
+
+.listaHeader a{
+    color:rgb(233, 222, 222);
+    font-weight: bold;
+}
+#headerDjathtas{  
+    width: 70%;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+    margin-top:10px;
+    
+}
+#headdUL{
+    display:flex;
+    flex-direction: row;
+    
+}
+#headdUL li{
+    list-style-type: none;
+    margin-right: 15px;
+    
+}
+#headerMajtas{
+    width: 30%;
+    height:100%;
+    display: flex;  
+    align-content: center;
+    align-items: center;
+    margin-top:10px;
+}
+
+/* #headmUL li img{
+    width:150px;
+    height:50px;
+    
+} */
+
+#headmUL{
+    display:flex;
+    flex-direction: row;
+}
+#headmUL li{
+margin-left: 15px;
+list-style-type: none;
+}
+li a {
+    text-decoration: none;
+}
+li a:hover{
+    /* border-bottom: 2px solid rgb(197, 176, 218); */
+    color:rgba(255, 151, 151, 0.87);
+}
+header{
+    display:flex;
+    flex-direction: row;
+    width:80%;
+    height:50px;
+    margin:0 auto;
+    font-family: 'Microsoft JhengHei Light' ;
+    font-size: 17px;
+    opacity:50%;
+    background: none;
+    
+}
