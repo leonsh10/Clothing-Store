@@ -68,7 +68,7 @@ form.example input[type=text] {
     float: right;
     width: 77%;
     height:7px;
-    background: #f3f3f3;
+    background: #ffffff;
     border:2px solid rgb(185, 185, 185,1);
     border-radius: 15px;
     color:	#475272;
@@ -354,6 +354,8 @@ align-items: center;
 
 #copyright{
     color:rgb(0, 0, 0);
+    font-family: sans-serif;
+    font-size:15px;
 }
 
 
@@ -368,8 +370,9 @@ align-items: center;
 
 #divLM *{
     margin:15px 0px;
-    font-family: Open Sans;
+    font-family: sans-serif;
     font-weight: 300;
+    
 }
 
 #listaDjathtas{
@@ -383,7 +386,7 @@ align-items: center;
 
 #divLD *{
     margin:15px 0px;
-    font-family:Open Sans;
+    font-family:sans-serif;
     font-weight: 300;
 }
 

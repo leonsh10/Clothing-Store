@@ -134,7 +134,7 @@ form.example input[type=text] {
     float: right;
     width: 77%;
     height:7px;
-    background: whitesmoke;
+    background: rgb(255, 255, 255);
     border:2px solid rgb(185, 185, 185,1);
     border-radius: 15px;
     color:	#475272;
@@ -329,6 +329,8 @@ align-items: center;
 
 #copyright{
     color:rgb(0, 0, 0);
+    font-family: sans-serif;
+    font-size:15px;
 }
 
 
@@ -343,7 +345,7 @@ align-items: center;
 
 #divLM *{
     margin:15px 0px;
-    font-family: Open Sans;
+    font-family: sans-serif;
     font-weight: 300;
 }
 
@@ -358,7 +360,7 @@ align-items: center;
 
 #divLD *{
     margin:15px 0px;
-    font-family:Open Sans;
+    font-family:sans-serif;
     font-weight: 300;
 }
 
