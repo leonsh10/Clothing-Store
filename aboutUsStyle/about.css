@@ -124,11 +124,11 @@ form.example input[type=text] {
     
 }
 
-#titulliMain h3:nth-last-child(1){
-    font-size:35px;
+#iMain h3:nth-last-child(1){
+    font-size:33px;
     color:rgb(173,173,173);
     font-weight: normal;
-    margin-top:28px;
+    margin-top:34px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
 }
@@ -269,7 +269,7 @@ form.example input[type=text] {
 }
 
 .skills{
-    margin-left: 85px;
+    margin-left: 66px;
     margin-top:7px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 17px;

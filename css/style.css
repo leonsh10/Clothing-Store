@@ -3,7 +3,8 @@
     padding:0;
 }
 body{
-    background-color:#f1f1f9;
+    background-image:linear-gradient(to right,#ebeef7,#eceff8,#f0f3fc,#f3f6ff,#f6f6fe,#f4f7fe,#f0f3fc) ;
+    
 }
 
 .listaHeader a{
@@ -64,7 +65,8 @@ header{
     flex-direction: row;
     width:80%;
     height:70px;
-    background-color:#f0f3fc;
+    background-image:linear-gradient(to right,#ebeef7,#eceff8,#f0f3fc,#f3f6ff,#f6f6fe,#f4f7fe,#f6f6fe,#f4f7ff) ;
+    /* background-color:#ebeef7; */
     margin:0 auto;
     font-family: 'Microsoft JhengHei Light';
     font-size: 17px;
@@ -73,37 +75,27 @@ header{
 
 
 #mainDiv{
-    position: relative;
-    width:100%;
-    min-height:843px;
-    margin:0 auto;
-    background-color: lightcoral;
+    background-image: url("../images/mainImg.jfif");
+    width:87%;
+    height:700px;
+    margin-left:120px;
+    margin-top:10px;
+    display: flex;
+    /* justify-content: first baseline; */
+    text-align: center;
+    align-items:center;
 }
 
-#mainImage{
-    position:relative;
-}
 
-#mainImage img {
-    width:100%;
-    height:100%;
-}
-
-#qender{
-    width:400px;
-    min-height:100px;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin:-550px 70px;
-}
 
 #head1{
     font-size: 50px;
 }
+
 #qender *{
     margin:10px;
     color:rgb(228, 139, 139);
+    margin-left:30px;
 }
 
 #butoni1 {
@@ -119,9 +111,9 @@ header{
 
 
 #butoni1:hover{
-    background-color:rgb(49, 146, 49);
+    background-color:#bba8a8;
     cursor: pointer;
-}
+} 
 
 
 
@@ -177,9 +169,7 @@ form.example input[type=text] {
     color:rgb(184, 178, 168);
 }
 
-/*
-WORK SPACE WORK SPACE WORK SPACE WORK SPACE
-*/
+
 
 #secondDiv{
     width:100%;
@@ -256,9 +246,7 @@ height : 531px
 
 
 
-/*
-WORK SPACE WORK SPACE WORK SPACE WORK SPACE
-*/
+
 
 footer{
     width:80%;
