@@ -116,7 +116,7 @@ form.example input[type=text] {
 
 
 #titulliMain h3{
-    font-size: 25px;
+    font-size: 22px;
     font-family: 'Times New Roman', Times, serif;
     color:rgb(173,173,173);
     font-weight: normal;
@@ -124,15 +124,10 @@ form.example input[type=text] {
     
 }
 
-#iMain h3:nth-last-child(1){
-    font-size:33px;
-    color:rgb(173,173,173);
-    font-weight: normal;
-    margin-top:34px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 100;
+#head333{
+    font-size:35px !important;
+    margin-top:35px !important;
 }
-
 
 #aboutus{
     width:75%;
@@ -258,6 +253,7 @@ form.example input[type=text] {
     margin:0 auto;
     /* border:1px solid red; */
     margin-top:5px;
+    font-weight: 300;
 }
 
 .para2{
@@ -269,10 +265,11 @@ form.example input[type=text] {
 }
 
 .skills{
-    margin-left: 66px;
+    margin-left: 75px;
     margin-top:7px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 17px;
+    font-weight: 300;
 }
 
 
