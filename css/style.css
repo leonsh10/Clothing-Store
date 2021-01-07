@@ -370,3 +370,108 @@ color:rgb(68,66,66);
 
 
 
+@media screen and (max-width: 800px){
+    header ul li{
+        font-size:22px;
+    }
+ header{
+     width:610px;
+ }
+ #headerMajtas{
+     width:30%;
+      display:flex;
+      flex-direction: row;
+     justify-content: start !important;
+     text-align: start;
+     margin-top:1px;
+     margin-right:-29px;
+     
+ }
+ #headerDjathtas{
+     width:70%;
+     margin-left:6px;
+ }
+
+
+
+ #headdUL li{
+     margin-right:4px;
+     padding:1px;
+ }
+
+ form.example input[type=text]{
+     font-size:16px;
+     height:0px;
+     padding:13px; 
+     width:61px;
+ }
+
+
+#qender{
+    margin-left:50px;
+}
+
+#head1{
+    font-size:25px;
+}
+
+#butoni1{
+    font-size: 10px;
+    width:42%;
+}
+
+ #mainDiv{
+     width:666px;
+     height:453px;
+     margin:0px 131px;
+     position: relative;
+     right:50%;
+     background-size:100% 100%;
+ }
+
+ #secondDiv{
+     width:610px;
+ }
+
+ #thirdDiv{
+     display:flex;
+     flex-direction: column;
+     width:fit-content;
+     height:fit-content;
+ }
+
+ #img1{
+    width: fit-content;
+    height:fit-content;
+    align-items: center;
+ }
+
+ #img2{
+    width: fit-content;
+    height:fit-content;
+    align-items: center;
+    margin-top:20px;
+    margin-left:55px;
+ }
+
+ #img3{
+    width: fit-content;
+    height:fit-content;
+    align-items: center;
+    margin-top:20px;
+    margin-left:22px;
+ }
+
+ footer{
+    width:610px;
+}
+
+#diviLart *{
+    font-size:22px;
+}
+
+#diviFundit *{
+    font-size:17px;
+}
+
+}

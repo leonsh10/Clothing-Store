@@ -404,3 +404,101 @@ color:rgb(68,66,66);
     float: left;
     padding-right: 3px;
 }
+
+@media screen and (max-width: 800px){
+    header ul li{
+        font-size:18px;
+    }
+ header{
+     width:100%;
+    
+ }
+ #headerMajtas{
+     width:30%;
+      display:flex;
+      flex-direction: row;
+     justify-content: start !important;
+     text-align: start;
+     margin-top:-1px;
+     margin-right:5px;
+     
+ }
+ #headerDjathtas{
+     width:70%;
+     margin-left:121px;
+ }
+
+ 
+
+ #headdUL li{
+     margin-right:4px;
+     padding:1px;
+ }
+
+ form.example input[type=text]{
+     font-size:12px;
+     height:0px;
+     padding:10px; 
+     width:50px;
+ }
+
+/* --------------------------------------------------------- */
+
+#kryesore{
+    width:500px;
+    margin-left:10px;
+    height:auto;
+
+}
+#aboutus{
+    width:93%;
+}
+
+#pjesaKomplet{
+    display:flex;
+    flex-direction: column;
+}
+
+
+#titulliLeader{
+    width:463px;
+    margin-left:-16px;
+    
+}
+
+#pjesa1{
+    width:463px;
+    margin-left:-16px;
+}
+
+#pjesa2{
+    width:463px;
+    margin-left:-16px;
+    
+}
+
+#leader{
+    height:auto;
+    margin-top:15px;
+}
+
+#pjesaKomplet{
+    height:709px;
+}
+
+.divParag{
+    font-size:15px;
+}
+
+footer{
+    width:514px;
+    min-height:400px;
+
+    
+}
+
+#diviLart *{
+    font-size:20px;
+}
+
+}
