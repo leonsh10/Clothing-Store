@@ -10,8 +10,8 @@
         <div id="headerMajtas">
             <ul id="headmUL">
 
-                <li class="listaHeader"><a href="index.html">HOME</a></li>
-                <li class="listaHeader"><a href="#">SHOP</a></li>
+                <li class="listaHeader"><a href="index.php">HOME</a></li>
+                <li class="listaHeader"><a href="shop.php">SHOP</a></li>
 
 
             </ul>
@@ -21,10 +21,10 @@
             <ul id="headdUL">
                 <li>
                 </li>
-                <li class="listaHeader"><a href="aboutUs.html">ABOUT</a></li>
-                <li class="listaHeader"><a href="news.html">NEWS</a></li>
-                <li class="listaHeader"><a href="contact.html">CONTACT</a></li>
-                <li class="listaHeader"><a href="login.html">LOGIN</a></li>
+                <li class="listaHeader"><a href="aboutUs.php">ABOUT</a></li>
+                <li class="listaHeader"><a href="news.php">NEWS</a></li>
+                <li class="listaHeader"><a href="contact.php">CONTACT</a></li>
+                <li class="listaHeader"><a href="login.php">LOGIN</a></li>
             </ul>
         </div>
     </header>
@@ -42,7 +42,7 @@
             <input type="password" id="pass" size="15" placeholder="Enter Password">
             <input type="submit" id="submit-btn" value="Login">
             <a href="#">Forgot your password?</a><br>
-            <a href="register.html">Don't have an account?</a>
+            <a href="register.php">Don't have an account?</a>
         </form>
     </div>
 

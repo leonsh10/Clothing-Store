@@ -12,8 +12,8 @@
     <header>
         <div id="headerMajtas">
             <ul id="headmUL">
-                <li class="listaHeader"><a href="index.html">HOME</a></li>
-                <li class="listaHeader"><a href="#">SHOP</a></li>
+                <li class="listaHeader"><a href="index.php">HOME</a></li>
+                <li class="listaHeader"><a href="shop.php">SHOP</a></li>
             </ul>
         </div>
 
@@ -24,10 +24,10 @@
                         <input type="text" placeholder="Search.." name="search">
                     </form>
                 </li>
-                <li class="listaHeader"><a href="aboutUs.html">ABOUT</a></li>
-                <li class="listaHeader"><a href="news.html">NEWS</a></li>
-                <li class="listaHeader"><a href="contact.html">CONTACT</a></li>
-                <li class="listaHeader"><a href="login.html">LOGIN</a></li>
+                <li class="listaHeader"><a href="aboutUs.php">ABOUT</a></li>
+                <li class="listaHeader"><a href="news.php">NEWS</a></li>
+                <li class="listaHeader"><a href="contact.php">CONTACT</a></li>
+                <li class="listaHeader"><a href="login.php">LOGIN</a></li>
             </ul>
         </div>
     </header>
@@ -91,11 +91,11 @@
         <div id="diviLart">
             <div id="divLM">
                 <ul id="listaMajtas">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="aboutUs.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="news.php">News</a></li>
+                    <li><a href="aboutUs.php">About Us</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="login.php">Login</a></li>
                 </ul>
             </div>
             <div id="divLD">
