@@ -6,7 +6,7 @@
     <title>Contact</title>
     <link rel="stylesheet" href="stiliContact/Style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/validimiContact.js"></script>
+    <!-- <script src="js/validimiContact.js"></script> -->
     </head>
 <body>
 
@@ -32,22 +32,37 @@
             </ul>
         </div>
     </header>
-
+  
 <div class="contact-section">
-
         <h1>Contact Us</h1>
         <div class="border"></div>
-    <form class="contact-form" action="indeks.html" method="post">
-        <input type="text" id="user" class="contact-form-text" placeholder="Your Name">
-        <input type="email" id="emaili" class="contact-form-text" placeholder="Your Email">
-        <input type="text" id="phone" class="contact-form-text" placeholder="Your Phone">
-        <textarea id="mesazhi" class="contact-form-text" placeholder="Your message"></textarea>
-        <input type="submit" id="btn-submit" class="contact-form-btn" value="Send">
+
+
+    <form class="contact-form" action="valContact.php" method="post">
+    <div id="errori" style="height:30px;padding-top:15px; background-color:#111;color:red;font-family: montserrat, sans-serif;text-align:center; ">
+        <?php
+    $Msg="";
+    if(isset($_GET['error'])){
+            $Msg=" Please Fill All Your Data ";
+            echo $Msg;    
+        }
+    
+            if(isset($_GET['success']))
+            {
+                $Msg = " Your Message Has Been Sent ";
+                echo $Msg;
+            }
+    ?>
+    </div>
+        <input type="text" id="user" class="contact-form-text" name="username" placeholder="Your Name">
+        <input type="email" id="emaili" class="contact-form-text" name="email" placeholder="Your Email">
+        <input type="text" id="phone" class="contact-form-text" name="phone" placeholder="Your Phone">
+        <textarea id="mesazhi" class="contact-form-text" name="message" placeholder="Your message"></textarea>
+        <input type="submit" id="btn-submit" class="contact-form-btn" name="submit" value="Send">
         
     </form>
 
 </div>
-
 
 </body>
 </html>

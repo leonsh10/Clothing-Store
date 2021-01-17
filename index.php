@@ -14,7 +14,17 @@
             <ul id="headmUL">
                 <li class="listaHeader"><a href="index.php">HOME</a></li>
                 <li class="listaHeader"><a href="shop.php">SHOP</a></li>
-            </ul>
+                
+                <?php
+                session_start();
+                if(isset($_SESSION['role']) && $_SESSION['role']==1){
+                    ?>
+                                    <li class="listaHeader"><a href="dashboard.php">DASHBOARD</a></li>
+                <?php
+                }
+                    ?>
+            
+                </ul>
         </div>
 
         <div id="headerDjathtas">

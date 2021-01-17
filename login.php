@@ -1,9 +1,8 @@
 <html>
-
 <head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="stilizimiLogin/Style.css">
-    <script src="js/validimiLogin.js"></script>
+    <!-- <script src="js/validimiLogin.js"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
     <header>
@@ -29,29 +28,26 @@
         </div>
     </header>
 
-
+ 
     <div class="loginbox">
-        <form id="mainForm">
-
-
+    
+        <form id="mainForm" action="valLogin.php" method="post">
             <img src="imagesLogin/avatar.jpg" class="avatar">
             <h1>Login</h1>
             <p>Username</p>
-            <input type="text" id="user" size="15" placeholder="Enter Username">
+            <input type="text" name="username" id="user" size="15"  placeholder="Enter Username"  required>
             <p>Password</p>
-            <input type="password" id="pass" size="15" placeholder="Enter Password">
-            <input type="submit" id="submit-btn" value="Login">
+            <input type="password" name="password"  id="pass" size="15" placeholder="Enter Password" required>
+            <input type="submit" id="submit-btn" name="submit" value="Login">
             <a href="#">Forgot your password?</a><br>
             <a href="register.php">Don't have an account?</a>
+           
         </form>
+
+        
     </div>
-
-
-
-
-
-
 </body>
 </head>
+
 
 </html>

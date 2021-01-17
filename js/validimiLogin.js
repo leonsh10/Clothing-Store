@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded",
 function(ngjarja) {
 const BtnSubmit = document.getElementById('submit-btn');
-/*Funksioni per te e validuar fushat e formes */
+/*Funksioni per validim */
 const validate = (ngjarja) => {
 ngjarja.preventDefault();
         const username = document.getElementById('user');
@@ -18,11 +18,6 @@ ngjarja.preventDefault();
             password.focus();
             return false;
         }
-
-        
-        
     }
-
     BtnSubmit.addEventListener('click', validate);
-    
 });
