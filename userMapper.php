@@ -56,7 +56,7 @@ class UserMapper extends DatabasePDOConfiguration
 
     public function insertUser(\SimpleUser $user)
     {
-        $this->query = "insert into user (username,password,email, role) values (:username,:password,:email,:role)";
+        $this->query = "insert into user (Username,Email,password, role) values (:username,:email,:password,:role)";
         $statement = $this->conn->prepare($this->query);
         $username = $user->getUsername();
         $email = $user->getEmail();

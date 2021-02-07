@@ -36,8 +36,12 @@
         <?php
                 $Msg="";
                 if(isset($_GET['error'])){
-            $Msg=" Please Fill All Your Data ";
+            $Msg=" Ploteso te dhenat!! ";
             echo $Msg;    
+                }
+            else if(isset($_GET['errori'])){
+                $Msg=" Username ose Password GABIM! ";
+                echo $Msg;   
         }           
     ?>
     </div>

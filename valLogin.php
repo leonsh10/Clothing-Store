@@ -30,13 +30,15 @@ public function verifyData()
     {
         if ($this->vEmpty($this->username, $this->password)) {
             header('Location:login.php?error');
-        } else if ($this->upCorrect($this->username, $this->password)) {
-            
-            header('Location:index.php');
         } 
-        // else {
-        //     header("Location:login.php");
-        // }
+        else if ($this->usernameAndPasswordCorrect($this->username, $this->password)) {
+            header('Location:index.php');
+        }
+        
+        else{
+            header('Location:login.php?errori');
+        }
+
     }
 
 private function vEmpty($username, $password)
@@ -47,17 +49,17 @@ private function vEmpty($username, $password)
     return false;
 }
 
-private function upCorrect($username, $password)
+private function usernameAndPasswordCorrect($username, $password)
 {
     $mapper = new UserMapper();
     $user = $mapper->getUserByUsername($username);
-    if ($user == null || count($user) == 0) return false;
-    else if (password_verify($password, $user['password'])) {
+    if ($user == null || count($user) == 0) header('Location:login.php?error');
+    else if (password_verify($password,$user['password'])) {
         if ($user['role'] == 1) {
-            $obj = new Admin($user['id'], $user['username'], $user['password'],$user['email'], $user['role']);
+            $obj = new Admin($user['username'], $user['password'],$user['email'], $user['role']);
             $obj->setSession();
         } else {
-            $obj = new SimpleUser($user['id'], $user['username'], $user['password'],$user['email'], $user['role']);
+            $obj = new SimpleUser($user['username'], $user['password'],$user['email'], $user['role']);
             $obj->setSession();
         }
         return true;

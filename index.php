@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -16,14 +15,6 @@
                 <li class="listaHeader"><a href="index.php">HOME</a></li>
                 <li class="listaHeader"><a href="shop.php">SHOP</a></li>
                 
-                <?php
-                session_start();
-                if(isset($_SESSION['role']) && $_SESSION['role']==1){
-                    ?>
-                                    <li class="listaHeader"><a href="dashboard.php">DASHBOARD</a></li>
-                <?php
-                }
-                    ?>
             
                 </ul>
         </div>
@@ -38,7 +29,8 @@
                 <li class="listaHeader"><a href="aboutUs.php">ABOUT</a></li>
                 <li class="listaHeader"><a href="news.php">NEWS</a></li>
                 <li class="listaHeader"><a href="contact.php">CONTACT</a></li>
-                <li class="listaHeader"><a href="login.php">LOGIN</a></li>
+                <li class="listaHeader"><a href="login.php">LOGIN</a></li>  
+                
             </ul>
         </div>
     </header>
