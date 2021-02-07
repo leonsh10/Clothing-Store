@@ -12,7 +12,6 @@
                 <li class="listaHeader"><a href="index.php">HOME</a></li>
                 <li class="listaHeader"><a href="shop.php">SHOP</a></li>
 
-
             </ul>
         </div>
 

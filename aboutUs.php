@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,6 +16,13 @@
             <ul id="headmUL">
                 <li class="listaHeader"><a href="index.php">HOME</a></li>
                 <li class="listaHeader"><a href="shop.php">SHOP</a></li>
+                <?php
+      if (isset($_SESSION['role']) && $_SESSION['role'] =='1')  {
+      ?>
+        <li class="listaHeader"><a href="dashboard.php">DASHBOARD</a></li>  
+      <?php
+      }
+      ?>
             </ul>
         </div>
 
@@ -26,7 +36,19 @@
                 <li class="listaHeader"><a href="aboutUs.php">ABOUT</a></li>
                 <li class="listaHeader"><a href="news.php">NEWS</a></li>
                 <li class="listaHeader"><a href="contact.php">CONTACT</a></li>
-                <li class="listaHeader"><a href="login.php">LOGIN</a></li>
+                <?php
+      if (isset($_SESSION['role']))  {
+      ?>
+        <li class="listaHeader"><a href="logout.php">LOGOUT</a></li>  
+      <?php
+      }
+      else{
+          ?>
+          
+        <li class="listaHeader"><a href="login.php">LOGIN</a></li>  
+        <?php
+      }
+      ?>
             </ul>
         </div>
     </header>

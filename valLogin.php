@@ -1,10 +1,11 @@
 <?php
 
-session_start();
+
 // include('variables.php');
 include_once 'adminClass.php';
 include_once 'simpleUserClass.php';
 require_once 'userMapper.php';
+session_start();
 
 if (isset($_POST['submit'])) {
     $login = new LoginLogic($_POST);
@@ -12,11 +13,11 @@ if (isset($_POST['submit'])) {
 } 
  else {
     header("Location:login.php");
-}
+}   
 
 class LoginLogic{
 
-
+  
     private $username = "";
     private $password = "";
 
