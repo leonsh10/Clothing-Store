@@ -1,5 +1,6 @@
 <?php
 include_once 'userMapper.php';
+session_start();
 if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
     $mapper =  new UserMapper();
     $userList = $mapper->getAllUsers();
@@ -11,7 +12,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
 <html>
 <head>
 <title>Dashboard</title>
-<link rel="stylesheet" href="stiliDashboard/dashboard.css">
+<link rel="stylesheet" href="stiliDashboard/dashboard2.css">
 </head>
 <body>
 <header>
@@ -20,6 +21,13 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
 
                 <li class="listaHeader"><a href="index.php">HOME</a></li>
                 <li class="listaHeader"><a href="shop.php">SHOP</a></li>
+                <?php
+      if (isset($_SESSION['role']) && $_SESSION['role'] =='1')  {
+      ?>
+        <li class="listaHeader"><a href="dashboard.php">DASHBOARD</a></li>  
+      <?php
+      }
+      ?>
 
             </ul>
         </div>
@@ -31,7 +39,19 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                 <li class="listaHeader"><a href="aboutUs.php">ABOUT</a></li>
                 <li class="listaHeader"><a href="news.php">NEWS</a></li>
                 <li class="listaHeader"><a href="contact.php">CONTACT</a></li>
-                <li class="listaHeader"><a href="login.php">LOGIN</a></li>
+                <?php
+      if (isset($_SESSION['role']))  {
+      ?>
+        <li class="listaHeader"><a href="logout.php">LOGOUT</a></li>  
+      <?php
+      }
+      else{
+          ?>
+          
+        <li class="listaHeader"><a href="login.php">LOGIN</a></li>  
+        <?php
+      }
+      ?>
             </ul>
         </div>
     </header>
@@ -40,37 +60,39 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
 <main>
 <div id="mainDiv">
 
-<h1>This is Dashboard page</h1>
+
     <div>
-        <h2>User list:</h2>
+        <h2 id="titulliTabeles">User list</h2>
         <table>
             <thead>
                 <tr>
-                    <td>Emri</td>
-                    <td>Mbiemri</td>
-                    <td>Email</td>
-                    <td>Detajet</td>
-                    <td>Modifiko</td>
-                    <td>Fshij</td>
+                    <td >ID</td>
+                    <td >Emri</td>
+                    <td >Email</td>
+                    <td >Modifiko</td>
+                    <td >Fshij</td>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach ($userList as $user) {
-                ?>
-                    <tr>
-                        <td><?php echo $user['Username']; ?></td>
-                        <td><?php echo $user['Email']; ?></td>
-                        <td><a href=<?php echo "detailsUser.php?id=" . $user['userId']; //to be continued by students
-                                    ?>>Detajet</a></td>
-                        <td><a href=<?php echo "edit.php?id=" . $user['userId'];
-                                    ?>>Modifiko</td>
-                        <td><a href=<?php echo "deleteUser.php?id=" . $user['userId'];
-                                    ?>>Fshij</td>
-                    </tr>
-                <?php
-                }
-                ?>
+                            global $userList;
+                            if (is_array($userList) || is_object($userList))
+                        {
+                            foreach ($userList as $user) {
+                                ?>
+                                    <tr>
+                                    <td><?php echo $user['userId']; ?></td>
+                                        <td><?php echo $user['username']; ?></td>
+                                        <td><?php echo $user['email']; ?></td>
+                                        <td><a href=<?php echo "editUser.php?id=" . $user['userId'];
+                                                    ?>>Modifiko</td>
+                                        <td><a href=<?php echo "deleteUser.php?id=" . $user['userId'];
+                                                    ?>>Fshij</td>
+                                    </tr>
+                                <?php
+                                }
+                            }
+                                ?>
             </tbody>
         </table>
     </div>

@@ -59,7 +59,7 @@ session_start();
                 <div id="zbritjaDiv">
                    <h3 id="epara">NEW ARRIVALS</h3>
                    <h3 id="dyta">COLLECTION</h3>
-                   <button id="treta">SHOP NOW</button>
+                   <button id="treta" name='button1'>SHOP NOW</button>
                 </div>
             </div>
             <div id="pjesaDyte">
