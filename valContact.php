@@ -1,7 +1,4 @@
 <?php
-ini_set('SMTP', "server.com");
-ini_set('smtp_port', "25");
-ini_set('sendmail_from', "email@domain.com");
 
 if(isset($_POST['submit'])){
 
@@ -14,16 +11,19 @@ $message=$_POST['message'];
 if(empty($username) || empty($email) || empty($phone) || empty($message)){
     header('Location:contact.php?error');
 }
-
-else
-{
-    $to = "leonshala.2020@gmail.com";
-
-    if(mail($to,$username,$message,$email))
-    {
-        header("location:contact.php?success");
+else {
+    if(isset($_POST['submit'])){
+        include_once('databaseConfig.php');
+            $obj=new Contact();
+            $res=$obj->contact_us($_POST);
+            if($res==true){
+                header("Location:contact.php?success");
+            }else{
+                header("Location:contact.php");
+            }
     }
 }
+
 }
 else
 {

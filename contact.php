@@ -82,7 +82,7 @@ session_start();
         <input type="submit" id="btn-submit" class="contact-form-btn" name="submit" value="Send">
         
     </form>
-
+    
 </div>
 
 </body>

@@ -22,7 +22,7 @@ class UserMapper extends DatabasePDOConfiguration
         return $result;
     }
 
-    public function edit(\SimpleUser $user, $id)
+    public function edit(\SimpleUser $user, $userId)
     {
         $this->query = "update user set username=:username, email=:email where userId=:id";
         var_dump($user);
@@ -31,7 +31,7 @@ class UserMapper extends DatabasePDOConfiguration
         $email = $user->getEmail();
         $statement->bindParam(":username", $username);
         $statement->bindParam(":email", $email);
-        $statement->bindParam(":id", $id);
+        $statement->bindParam(":id", $userId);
         $statement->execute();
     }
 
@@ -52,6 +52,15 @@ class UserMapper extends DatabasePDOConfiguration
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
+    }
+
+    public function getAllContacts()
+    {
+        $this->query = "select * from contact_us";
+        $statement = $this->conn->prepare($this->query);
+        $statement->execute();
+        $resultC = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $resultC;
     }
 
     public function insertUser(\SimpleUser $user)
