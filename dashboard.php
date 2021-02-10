@@ -77,7 +77,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
             </thead>
             <tbody>
                 <?php
-                            global $userList;
+                            
                             if (is_array($userList) || is_object($userList))
                         {
                             foreach ($userList as $user) {
@@ -113,7 +113,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
             </thead>
             <tbody>
                 <?php
-                            global $userList2;
+                            
                             if (is_array($userList2) || is_object($userList2))
                         {
                             foreach ($userList2 as $user) {

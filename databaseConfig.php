@@ -1,5 +1,7 @@
 <?php
 
+$connection =mysqli_connect("localhost","root","","projekti");
+
 class DatabasePDOConfiguration
 {
     private $connection;

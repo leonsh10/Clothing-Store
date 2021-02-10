@@ -53,96 +53,123 @@ session_start();
         </div>
     </header>
 
-    <main>
-        <div id="kryesore">
-            <div id="titulliMain">
-                <h2>-OUR MISSION-</h2>
-                <h3>TO PROVIDE BEST ONLINE SHOP.</h3></i>
-                <h3 id="head333">OUR STORY</h3>
-            </div>
-            <div id="aboutus">
-                <p>KY DYQAN FILLOJ PUNEN ME 1 JANAR TE VITIT 2021.2 SHOKE PATEN NJE VIZION:<br> 
-                    TE SHPERNDAJNE LUMTURINE DUKE E KTHYER NJE MOMENT TE SIKLETSHEM
-                    GJATE PERZGJEDHJES SE DISA KOSTUMEVE KLASIKE NE NJE MOMENT KENAQESIE 
-                    GJATE PERZGJEDHJES SE TYRE TE CILAT KANE NJE STANDART TE LARTE TE 
-                    KUALITETIT SI DHE KREATIVITETIT.<BR>
-                        KY KONCEPT ARRITI PERFEKSIONIN NGA KOLEKTIVI I KRIJUESVE.<BR>
-                    DERI ME SOT KY DYQAN KA POROSI NGA ME SHUME SE 70 SHTETE NGA E GJITHE BOTA.
-                    KARAKTERISTIKAT KRYESORE TE KETYRE KOSTUMEVE JANE DIZAJNI I VEQANTE I TYRE,
-                    MATERIALI,NGJYRAT DHE MBI TE GJITHA KLASIKJA E CILA GJENDET NE ATO KOSTUME.
-                            <BR><BR>
-                            <i><B>THENE THJESHT:IN A WORLD FULL OF TRENDS I WANT TO REMAIN A CLASSIC.</i> <br>:)
 
-                
-                </p>
-                <!-- <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-                    Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
-                    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-                    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.
-                    Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus
-                    enim ac dui.
-                    Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus,
-                    tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi,
-                    tincidunt quis,
-                    accumsan porttitor, facilisis luctus, metus.tortor neque egestas augue, eu vulputate magna eros eu
-                    erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,
-                    accumsan porttitor, facilisis luctus, metus.tortor neque egestas augue, eu vulputate magna eros eu
-                    erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,
-                    accumsan porttitor, facilisis luctus, metus.tortor neque egestas augue, eu vulputate magna eros eu
-                    erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,
-                    accumsan porttitor, facilisis luctus, metus..</p> -->
-            </div>
-        </div>
+
+    <main>
+
+    <?php
+require 'databaseConfig.php';
+
+$query="select * from about_us";
+$query_run=mysqli_query($connection,$query);
+
+if(mysqli_num_rows($query_run) > 0 )
+{
+
+foreach($query_run as $row)
+{
+    ?>
+    <div id="kryesore">
+    <div id="titulliMain">
+        <h2><?php echo $row['title'];?></h2>
+        <h3><?php echo $row['subTitle'];?></h3></i>
+        <h3 id="head333"><?php echo $row['minTitle'];?></h3>
+    </div>
+    <div id="aboutus">
+        <p><?php echo $row['shkrimi'];?>
+                    <BR><BR>
+                    <i><B><?php echo $row['boldTekst'];?></i> <br>:)
+
+        </p>
+    </div>
+</div>
+<?php
+}
+}
+    ?>
+
+
+
+       
 
         <div id="leader">
             <div id="titulliLeader">
-                <h1>Leadership</h1>
-            </div>
+                <?php
+                    $query1="select * from about_us1";
+                    $query_run1=mysqli_query($connection,$query1);
+                    
+                    if(mysqli_num_rows($query_run1) > 0 )
+                    {
+                    
+                    foreach($query_run1 as $row)
+                    {
+                        
+?>
+                        
+                        <h1><?php  echo $row['titulli1']; ?></h1>
+                        </div>
+            
+                        <div id="pjesaKomplet">
+            
+                            <div id="pjesa1">
+                                <img src="fotoProjektit/Man.png">
+                                <h3 class="emri"><?php  echo $row['emri1']; ?></h3>
+                                <p class="parag">
+                                <?php  echo $row['titulli2']; ?>
+                                </p>
+            
+                                <div class="divParag">
+                                    <p class="para2">
+                                    <?php  echo $row['teksti1']; ?>
+                                    </p>
+                                </div>
+                                <p class="skills">
+                                    <b>Skills:</b> <?php  echo $row['skills']; ?>
+                                </p>
+                            </div>
+                            <?php
+                    }
+                }
+                ?>
 
-            <div id="pjesaKomplet">
 
-                <div id="pjesa1">
-                    <img src="fotoProjektit/Man.png">
-                    <h3 class="emri">Leon Shala</h3>
-                    <p class="parag">
-                        CO-FOUNDER & CEO
-                    </p>
-
-                    <div class="divParag">
-                        <p class="para2">
-                            Leoni eshte nje nder themeluesit e ketij dyqani.
-                            Eshte nje nga dyqanet me te medha qe funksionon online
-                            dhe Leoni ishe ideator i kesaj.Para se te krijonte kete ai
-                            po punonte per nje kompani mjaft te madhe.
-                        </p>
+            <?php
+                    $query2="select * from about_us2";
+                    $query_run2=mysqli_query($connection,$query2);
+                    
+                    if(mysqli_num_rows($query_run2) > 0 )
+                    {
+                    
+                    foreach($query_run2 as $row)
+                    {
+                        
+?>
+                        
+                            <div id="pjesa2">
+                                <img src="fotoProjektit/Man.png">
+                                <h3 class="emri"><?php  echo $row['emri2']; ?></h3>
+                                <p class="parag">
+                                <?php  echo $row['titulli3']; ?>
+                                </p>
+            
+                                <div class="divParag">
+                                    <p class="para2">
+                                    <?php  echo $row['teksti5']; ?>
+                                    </p>
+                                </div>
+                                <p class="skills">
+                                    <b>Skills:</b> <?php  echo $row['skills2']; ?>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="skills">
-                        <b>Skills:</b> Creativity,Reliability,Communication
-                    </p>
-                </div>
 
-                <div id="pjesa2">
-                    <img src="fotoProjektit/Man.png">
-                    <h3 class="emri">Gramos Xhigoli</h3>
-                    <p class="parag">
-                        CO-FOUNDER & CEO
-                    </p>
-
-                    <div class="divParag">
-                        <p class="para2">
-                            Gramosi eshte nje nder themeluesit e ketij dyqani.
-                            Eshte nje nga dyqanet me te medha qe funksionon online
-                            dhe Gramosi ishe ideator i kesaj.Para se te krijonte kete ai
-                            po punonte per nje kompani mjaft te madhe.
-                        </p>
-                    </div>
-                    <p class="skills">
-                        <b>Skills:</b> Creativity,Reliability,Communication
-                    </p>
-                </div>
-            </div>
-        </div>
+                    <?php
+                    }
+                }
+                    ?>
+              
+               
     </main>
 
 
