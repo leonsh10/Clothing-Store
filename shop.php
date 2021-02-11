@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="cssShop/stiliShop2.css">
+    <link rel="stylesheet" href="cssShop/stiliShop.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0;">
 </head>
 
 <body>
@@ -142,7 +143,6 @@
     let currentSlide = 1;
     
 
-    // Javascript for image slider manual navigation
     var manualNav = function(manual){
       slides.forEach((slide) => {
         slide.classList.remove('active');
@@ -162,8 +162,6 @@
         currentSlide = i;
       });
     });
-
-    // Javascript for image slider autoplay navigation
     var repeat = function(activeClass){
       let active = document.getElementsByClassName('active');
       let i = 1;

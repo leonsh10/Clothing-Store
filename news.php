@@ -56,14 +56,34 @@ session_start();
     <main>
         <div id="kryesore">
             <div id="pjesaPare">
+            <?php
+            require 'databaseConfig.php';
+
+            $query="select * from news";
+            $query_run=mysqli_query($connection,$query);
+            
+            if(mysqli_num_rows($query_run) > 0 )
+            {
+            
+            foreach($query_run as $row)
+            {
+
+            ?>
                 <div id="zbritjaDiv">
-                   <h3 id="epara">NEW ARRIVALS</h3>
-                   <h3 id="dyta">COLLECTION</h3>
-                   <button id="treta" name='button1'>SHOP NOW</button>
+                   <h3 id="epara"><?php echo $row['titulli1'];?></h3>
+                   <h3 id="dyta"><?php echo $row['titulli2'];?></h3>
+                   <button id="treta" name='button1'><?php echo $row['butoni'];?></button>
                 </div>
+            
+
+            <?php
+            }
+        }
+            ?>
             </div>
+
             <div id="pjesaDyte">
-                <div id="foto1">
+            <div id="foto1">
                         <a href="#"><img src="images/1shi.jpg"></a>
                         <h3>Just in Suits</h3>
                         <p>Modern & Slim Fit</p>
@@ -83,6 +103,7 @@ session_start();
                 </div>
                 
             </div>
+
         </div>
     </main>
 
