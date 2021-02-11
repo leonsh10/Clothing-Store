@@ -57,19 +57,32 @@ session_start();
     </header>
 
     <main>
+    <?php
+require 'databaseConfig.php';
+
+$query="select * from homepage";
+$query_run=mysqli_query($connection,$query);
+
+if(mysqli_num_rows($query_run) > 0 )
+{
+
+foreach($query_run as $row)
+{
+
+    ?>
         <div id="mainDiv">
             <!-- <div id="mainImage"> -->
                 <!-- <img src="images/mainImg.jfif"> -->
                 <div id="qender">
-                    <h1 id="head1">Spring Collection</h1>
-                    <button id="butoni1" type="button">SHOP WOMEN</button>
+                    <h1 id="head1"><?php echo $row['titulliLart'];?></h1>
+                    <button id="butoni1" type="button"><?php echo $row['butoni1'];?></button>
                 </div>
             <!-- </div> -->
         </div>
 
         <div id="secondDiv">
             <div id="teksti">
-                <p id="headeri-posht">Featured Collection</p>
+                <p id="headeri-posht"><?php echo $row['titulliMes'];?></p>
                 <div id="lines">
                     <div></div>
                     <div></div>
@@ -79,20 +92,20 @@ session_start();
             <div id="thirdDiv">
 
                 <div id="img1">
-                    <a href="#"><img src="images/pexels-pixabay-157675.jpg">
-                        <p><i>Classic Coat Men -$1999</i></p>
+                    <a href="#"><a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto3'] ).'"/>'; ?>
+                        <p><i><?php echo $row['pershk1'];?></i></p>
                     </a>
                 </div>
 
                 <div id="img2">
-                    <a href="#"><img src="images/asdfasdas.png">
-                        <p><i>Classic Suit Men -$2999</i></p>
+                    <a href="#"><a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto2'] ).'"/>'; ?>
+                        <p><i><?php echo $row['pershk2'];?></i></p>
                     </a>
                 </div>
 
                 <div id="img3">
-                    <a href="#"><img src="images/dsfds.jpg">
-                        <p><i>Stylish Coat Men -$1599</i></p>
+                    <a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto1'] ).'"/>'; ?>           
+                        <p><i><?php echo $row['pershk3'];?></i></p>
                     </a>
                 </div>
 
@@ -103,7 +116,13 @@ session_start();
 
 
     </main>
+            <?php 
+            }
+        }?>
 
+
+
+        
     <footer>
         <div id="diviPosht">
             <div id="vija">

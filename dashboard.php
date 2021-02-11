@@ -14,7 +14,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
 <html>
 <head>
 <title>Dashboard</title>
-<link rel="stylesheet" href="stiliDashboard/dashboard2.css">
+<link rel="stylesheet" href="stiliDashboard/dashboard.css">
 </head>
 <body>
 <header>

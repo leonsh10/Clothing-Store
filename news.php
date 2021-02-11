@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head>
-        <TITLE>NEWS</TITLE>
+        <TITLE>SHOP</TITLE>
         <link rel="stylesheet" href="stiliNews/news.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -82,29 +82,49 @@ session_start();
             ?>
             </div>
 
+        
+            <?php
+
+$query2="select * from news";
+$query_run2=mysqli_query($connection,$query2);
+
+if(mysqli_num_rows($query_run2) > 0 )
+{
+
+foreach($query_run2 as $row)
+{
+    ?>
+
             <div id="pjesaDyte">
+
             <div id="foto1">
-                        <a href="#"><img src="images/1shi.jpg"></a>
-                        <h3>Just in Suits</h3>
-                        <p>Modern & Slim Fit</p>
-                        <p class="qmimi1">119.90$</p>
+                        <a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto1'] ).'"/>'; ?></a>
+                        <h3><?php echo $row['tekstiBold'];?></h3>
+                        <p><?php echo $row['teksti2'];?></p>
+                        <p class="qmimi1"><?php echo $row['teksti3'];?></p>
                 </div>
                 <div id="foto2">
-                    <a href="#"><img src="images/2shi.jpg"></a>
-                    <h3>Just in Suits</h3>
-                        <p>Modern & Slim Fit</p>
-                        <p class="qmimi1">119.90$</p>
+                    <a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto2'] ).'"/>'; ?></a>
+                    <h3><?php echo $row['tekstiBold'];?></h3>
+                        <p><?php echo $row['teksti2'];?></p>
+                        <p class="qmimi1"><?php echo $row['teksti3'];?></p>
                 </div>
                 <div id="foto3">
-                    <a href="#"><img src="images/3shi.jpg"></a>
-                    <h3>Just in Suits</h3>
-                        <p>Modern & Slim Fit</p>
-                        <p class="qmimi1">119.90$</p>
+                    <a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto3'] ).'"/>'; ?></a>
+                    <h3><?php echo $row['titulli1'];?></h3>
+                        <p><?php echo $row['teksti2'];?></p>
+                        <p class="qmimi1"><?php echo $row['teksti3'];?></p>
                 </div>
                 
             </div>
+            <?php
+
+}
+}
+?>
 
         </div>
+     
     </main>
 
         <footer>
