@@ -22,18 +22,7 @@ class UserMapper extends DatabasePDOConfiguration
         return $result;
     }
 
-    public function edit(\SimpleUser $user, $userId)
-    {
-        $this->query = "update user set username=:username, email=:email where userId=:id";
-        var_dump($user);
-        $statement = $this->conn->prepare($this->query);
-        $username = $user->getUsername();
-        $email = $user->getEmail();
-        $statement->bindParam(":username", $username);
-        $statement->bindParam(":email", $email);
-        $statement->bindParam(":id", $userId);
-        $statement->execute();
-    }
+
 
     public function getUserByUsername($username)
     {
