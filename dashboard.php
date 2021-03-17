@@ -1,11 +1,13 @@
 <?php
 include_once 'userMapper.php';
 include_once 'databaseConfig.php';
+include_once 'products.php';
 session_start();
 if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
     $mapper =  new UserMapper();
     $userList = $mapper->getAllUsers();
     $userList2=$mapper->getAllContacts();
+    $userList3=$mapper->getAllProducts();
 } else {
     // header("Location:index.php");
 }
@@ -85,8 +87,8 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                                     <td><?php echo $user['userId']; ?></td>
                                         <td><?php echo $user['username']; ?></td>
                                         <td><?php echo $user['email']; ?></td>
-                                        <td><a href=<?php echo "deleteUser.php?id=" . $user['userId'];
-                                                    ?>>Fshij</td>
+                                        <td><button id="butonFshij"><a style="text-decoration:none;" href=<?php echo "deleteUser.php?id=" . $user['userId'];
+                                                    ?>>Fshij</button></td>
                                     </tr>
                                 <?php
                                 }
@@ -120,7 +122,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                                     <td><?php echo $user['name']; ?></td>
                                         <td><?php echo $user['email']; ?></td>
                                         <td><?php echo $user['phone']; ?></td>
-                                        <td id="mesazhi"><?php echo $user['message']; ?></td>
+                                        <td  id="mesazhi"><?php echo $user['message']; ?></td>
                                     </tr>
                                 <?php
                                 }
@@ -135,6 +137,77 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
 
     </div>
 
+
+            <div id="produkti">
+            
+                <div id="formaP">
+                <form id="formaProduktit" method ="POST" action="valProducts.php" >
+                <h3>Shto Produkt</h3>
+                    <p></p>
+                    <input type="text" id="pName"  size="15" placeholder="Emri Produktit" name="emri" > 
+                    <p></p>
+                    <textarea id="pershkrimi" name="pershkrimiProduktit" id="pPershkrimi" placeholder="Pershkrimi"  rows="4" cols="40"></textarea>
+                    <p></p>
+                    <input type="number" min="0" name="qmimiProduktit" max="10000"  id="pQmimi" placeholder="Qmimi"> 
+                    <p></p>
+    
+                    <label> Shto Foto
+                    <input type="file" name="fotoProduktit" id="fotoP"  accept="image/*" >
+                    </label> 
+                    <input type="submit" id="butonP" name="submit" value="Shto Produktin">
+                </form>
+                        </div>
+                        
+                        <h2 id="titulliTabeles2" style="margin-right:480px;">Produktet</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <td >ID</td>
+                    <td >Produkti</td>
+                    <td >Pershkrimi</td>
+                    <td >Qmimi</td>
+                    <td style="width:22%;" id="mesazhi">Foto</td>
+                    <td style="width:20%;">Fshij/Edit</td>
+                </tr>
+            </thead>
+            <tbody>
+            <?php        
+
+            $query3="select * from produktet";
+            $query_run3=mysqli_query($connection,$query3);    
+            
+  
+                            if (is_array($userList3) || is_object($userList3))
+                        {
+                            foreach ($userList3 as $user) {
+                               
+                                ?>
+                                    <tr>
+                                    <td><?php echo $user['idProduktit']; ?></td>
+                                    <td><?php echo $user['emriProduktit']; ?></td>
+                                        <td><?php echo $user['pershkrimiProduktit']; ?></td>
+                                        <td><?php echo $user['qmimiProduktit']; ?>$</td>
+                                        <td>
+                                        <?php echo '<img src="images/'.$user['fotoProduktit'].'"width="200px;" height="250px;"'?></td>
+                                        <td><button id="butonFshij"><a style="text-decoration:none;" href=<?php echo "deleteProduct.php?idProduktit=" . $user['idProduktit'];
+                                                    ?>>Fshij</button>
+                                                    <button name="butoni12" style="margin-top:10px;"id="butonFshij"><a style="text-decoration:none;" href="editProduct.php">Edit</button>
+                                        </td>
+                                       
+                                        
+                                    </tr>
+                                <?php
+                                
+}
+}
+
+                    
+                                ?>
+            </tbody>
+        </table>
+                        
+                                    </div>
 
 
 </div>

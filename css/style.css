@@ -173,7 +173,7 @@ form.example input[type=text] {
 
 #secondDiv{
     width:100%;
-    min-height:700px;
+    min-height:1000px;
     /* background-color:#e5e8ef; */
     background-color:#f0f3fc;
     /* border:1px solid rgb(161, 44, 44); */
@@ -181,23 +181,22 @@ form.example input[type=text] {
 
 #thirdDiv{
     width:90%;
-    height:550px;
-    /* border:1px solid black; */
+    min-height:550px;  
     margin:0 auto;
-    /* background-color: white; */
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: row ;
     justify-content: space-around;
     text-align: center;
     font-size:18px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
+    flex-wrap: wrap;    
 }
 
 #thirdDiv *{
    color:#858585;
     text-decoration: none;
+   
 }
 
 #img1 img:hover{
@@ -215,6 +214,7 @@ form.example input[type=text] {
 #img1{
     width:23%;
     height: 440px;
+    margin-top:30px;
 }
 /*
 height : 531px
@@ -433,12 +433,12 @@ color:rgb(68,66,66);
      width:610px;
  }
 
- #thirdDiv{
+ /* #thirdDiv{
      display:flex;
-     flex-direction: column;
+     flex-direction: row;
      width:fit-content;
      height:fit-content;
- }
+ } */
 
  #img1{
     width: fit-content;

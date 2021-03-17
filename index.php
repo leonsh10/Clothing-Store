@@ -5,7 +5,7 @@ session_start();
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Style.css">
     <title>HomePage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -89,40 +89,35 @@ foreach($query_run as $row)
                     <div></div>
                 </div>
             </div>
-            <div id="thirdDiv">
-
-                <div id="img1">
-                    <a href="#"><a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto3'] ).'"/>'; ?>
-                        <p><i><?php echo $row['pershk1'];?></i></p>
-                    </a>
-                </div>
-
-                <div id="img2">
-                    <a href="#"><a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto2'] ).'"/>'; ?>
-                        <p><i><?php echo $row['pershk2'];?></i></p>
-                    </a>
-                </div>
-
-                <div id="img3">
-                    <a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto1'] ).'"/>'; ?>           
-                        <p><i><?php echo $row['pershk3'];?></i></p>
-                    </a>
-                </div>
-
-
-
-            </div>
-        </div>
-
-
-    </main>
+            
             <?php 
             }
         }?>
+    <div id="thirdDiv">
+<?php
+ 
+$query2="select * from produktet";
+$query_run2=mysqli_query($connection,$query2);
+
+while($row = mysqli_fetch_array($query_run2) ){
+    ?>
+           
+            
+                <div id="img1">
+              
+                    <a href="#"><?php echo '<img src="images/'.$row['fotoProduktit'].'"width="200px;" height="200px;"' ?>
+                        <p><i><?php echo $row['emriProduktit']; ?> - <?php echo $row['qmimiProduktit']; ?>$</i></p> 
+                    </a>
+                    
+                </div>  
+           
+                    
+            <?php } ?>
+            </div>
+    </main>
+    
 
 
-
-        
     <footer>
         <div id="diviPosht">
             <div id="vija">

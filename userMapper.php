@@ -43,6 +43,15 @@ class UserMapper extends DatabasePDOConfiguration
         return $result;
     }
 
+    public function getAllProducts()
+    {
+        $this->query = "select * from produktet";
+        $statement = $this->conn->prepare($this->query);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function getAllContacts()
     {
         $this->query = "select * from contact_us";
@@ -72,6 +81,29 @@ class UserMapper extends DatabasePDOConfiguration
         $this->query = "delete from user where userId=:id";
         $statement = $this->conn->prepare($this->query);
         $statement->bindParam(":id", $userId);
+        $statement->execute();
+    }
+
+    public function insertProducts($product)
+    {
+        $this->query = "insert into produktet (emriProduktit,pershkrimiProduktit,qmimiProduktit, fotoProduktit) values (:emriProduktit,:pershkrimiProduktit,:qmimiProduktit,:fotoProduktit)";
+        $statement = $this->conn->prepare($this->query);
+        $emriP = $product->getEmri();
+        $pershkP = $product->getPershkrimi();
+        $qmimiP =$product->getQmimi();
+        $fotoP = $product->getFoto();
+        $statement->bindParam(":emriProduktit", $emriP);
+        $statement->bindParam(":pershkrimiProduktit", $pershkP);
+        $statement->bindParam(":qmimiProduktit", $qmimiP);
+        $statement->bindParam(":fotoProduktit", $fotoP);
+        $statement->execute();
+    }
+
+    public function deleteProduct($idProduktit)
+    {
+        $this->query = "delete from produktet where idProduktit=:id";
+        $statement = $this->conn->prepare($this->query);
+        $statement->bindParam(":id", $idProduktit);
         $statement->execute();
     }
 }
