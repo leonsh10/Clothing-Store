@@ -1,6 +1,5 @@
 <?php
 require_once "databaseConfig.php";
-
 class UserMapper extends DatabasePDOConfiguration
 {
 
@@ -104,6 +103,38 @@ class UserMapper extends DatabasePDOConfiguration
         $this->query = "delete from produktet where idProduktit=:id";
         $statement = $this->conn->prepare($this->query);
         $statement->bindParam(":id", $idProduktit);
+        $statement->execute();
+    }
+
+    public function editProduct(\products $product1, $idP)
+    {
+        $this->query = "update produktet set emriProduktit=:emri, pershkrimiProduktit=:perPr, qmimiProduktit=:qmimiP , fotoProduktit =:fotoP where idProduktit=:idP";
+        // var_dump($product1);
+        $statement = $this->conn->prepare($this->query);
+        $emri = $product1->getEmri();
+        $perPr = $product1->getPershkrimi();
+        $qmimiP = $product1 ->getQmimi();
+        $fotoP = $product1 -> getFoto();
+        $statement->bindParam(":emriProduktit", $emri);
+        $statement->bindParam(":pershkrimiProduktit", $perPr);
+        $statement->bindParam(":QmimiProduktit", $qmimiP);
+        $statement->bindParam(":fotoProduktit", $fotoP);
+        $statement->bindParam(":idProduktit", $id);
+        $statement->execute();
+    }
+
+    public function edit(\SimpleUser $user, $id)
+    {
+        $this->query = "update user set username=:username, email=:email, role=:role where userId=:id";
+        // var_dump($user);
+        $statement = $this->conn->prepare($this->query);
+        $username = $user->getUsername();
+        $email = $user->getEmail();
+        $role=$user->getRole();
+        $statement->bindParam(":username", $username);
+        $statement->bindParam(":email", $email);
+        $statement->bindParam(":role", $role);
+        $statement->bindParam(":id", $id);
         $statement->execute();
     }
 }

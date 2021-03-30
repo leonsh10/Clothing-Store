@@ -2,6 +2,7 @@
 session_start();
 require_once 'userMapper.php';
 require_once 'products.php';
+
 if(isset($_POST['submit'])){
     
     $pershkrimiP=$_POST['pershkrimiProduktit'];
@@ -51,5 +52,17 @@ class ProductsLogic
         $mapper->insertProducts($product);
         header("Location:dashboard.php");
     }
+}
+//Per edit
+if (isset($_POST['submit2'])) {
+    $idP = $_POST['idProduktit'];
+    $emriP = $_POST['emriProduktit'];
+    $pershkP = $_POST['pershkrimiProduktit'];
+    $qmimiP = $_POST['qmimiProduktit'];
+    $fotoP = $_POST['fotoProduktit'];
+    $product1 = new products($emriP,$pershkP, $qmimiP, $fotoP);
+    $mapper = new UserMapper();
+    $mapper->editProduct($product1, $idP);
+    header("Location:dashboard.php");
 }
 ?>

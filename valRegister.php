@@ -56,5 +56,16 @@ class RegisterLogic
         header("Location:login.php");
     }
 }
+if (isset($_GET['userId'])) {
+    $name=$_POST['username'];
+    $email=$_POST['email'];
+    $role = $_POST['role'];
+    $password=$_POST['password'];
+    
+    $user = new SimpleUser($name,$email, $role, $password);
+    $mapper = new UserMapper();
+    $mapper->edit($user, $id);
+    header("Location:dashboard.php");
+}
 
 ?>

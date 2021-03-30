@@ -11,6 +11,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
 } else {
     // header("Location:index.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,7 +74,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                     <td >ID</td>
                     <td >Emri</td>
                     <td >Email</td>
-                    <td >Fshij</td>
+                    <td >Fshij/Edit</td>
                 </tr>
             </thead>
             <tbody>
@@ -88,7 +89,9 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                                         <td><?php echo $user['username']; ?></td>
                                         <td><?php echo $user['email']; ?></td>
                                         <td><button id="butonFshij"><a style="text-decoration:none;" href=<?php echo "deleteUser.php?id=" . $user['userId'];
-                                                    ?>>Fshij</button></td>
+                                                    ?>>Fshij</button>
+                                                    <button id="butonFshij"><a style="text-decoration:none;" href=<?php echo "editUser.php?id=" . $user['userId'];
+                                                    ?>>Edit</button></td>
                                     </tr>
                                 <?php
                                 }
@@ -146,17 +149,19 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                     <p></p>
                     <input type="text" id="pName"  size="15" placeholder="Emri Produktit" name="emri" > 
                     <p></p>
-                    <textarea id="pershkrimi" name="pershkrimiProduktit" id="pPershkrimi" placeholder="Pershkrimi"  rows="4" cols="40"></textarea>
+                    <textarea id="pershkrimi" name="pershkrimiProduktit" id="pPershkrimi" placeholder="Pershkrimi"  rows="4" cols="40" ></textarea>
                     <p></p>
-                    <input type="number" min="0" name="qmimiProduktit" max="10000"  id="pQmimi" placeholder="Qmimi"> 
+                    <input type="number" min="0" name="qmimiProduktit" max="10000"  id="pQmimi" placeholder="Qmimi" > 
                     <p></p>
     
                     <label> Shto Foto
                     <input type="file" name="fotoProduktit" id="fotoP"  accept="image/*" >
-                    </label> 
+                    <input type="hidden" name="id">
+                    </label>  
                     <input type="submit" id="butonP" name="submit" value="Shto Produktin">
-                </form>
-                        </div>
+
+                  
+                    </div>
                         
                         <h2 id="titulliTabeles2" style="margin-right:480px;">Produktet</h2>
 
@@ -192,7 +197,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                                         <?php echo '<img src="images/'.$user['fotoProduktit'].'"width="200px;" height="250px;"'?></td>
                                         <td><button id="butonFshij"><a style="text-decoration:none;" href=<?php echo "deleteProduct.php?idProduktit=" . $user['idProduktit'];
                                                     ?>>Fshij</button>
-                                                    <button name="butoni12" style="margin-top:10px;"id="butonFshij"><a style="text-decoration:none;" href="editProduct.php">Edit</button>
+                                                    <button name="butoni12" style="margin-top:10px;"id="butonFshij"><a style="text-decoration:none;" href=<?php echo "edit.php?idProduktit=" . $user['idProduktit'];?>>Edit</button>
                                         </td>
                                        
                                         
@@ -208,6 +213,10 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
         </table>
                         
                                     </div>
+                </form>
+                      
+
+                  
 
 
 </div>
