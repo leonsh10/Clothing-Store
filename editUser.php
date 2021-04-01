@@ -1,21 +1,23 @@
 <?php
-
+session_start();
 include_once 'userMapper.php';
 include_once 'databaseConfig.php';
+include_once 'simpleUserClass.php';
+include_once 'products.php';
 if(isset($_POST['update'])){
-    $id = isset($_POST['id']) ? $_POST['id'] : '';
-    $name = $_POST['username'];
-    $Email = $_POST['email'];
-    $Role=$_POST['role'];
+    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $username = $_POST['username'];
+    $email =$_POST['email'];
+    $role = $_POST['role'];
 
-    if(verifyEmpty($name,$Email,$Role)){
+    if(verifyEmpty($username,$email)){
         echo 'Ploteso te dhenat';
     }
 
-    // else{
-    // $simpleUser = new SimpleUser($username, $email,$password,$role);
+    // {
+    // $simpleUser = new SimpleUser($username,'',$email,$role);
     // $mapper = new UserMapper();
-    // $mapper->edit($simpleUser, $userId);
+    // $mapper->edit($simpleUser, $id);
     // // header("Location:dashboard.php");
     // }
 
@@ -28,14 +30,14 @@ if(isset($_POST['update'])){
     
    
     else{
-        $result = mysqli_query($connection,"UPDATE user SET username='$name',email='$Email','role'='$Role' WHERE userId = $userid;");
+        $result = mysqli_query($connection,"UPDATE user SET username='$username',email='$email',role='$role'  WHERE userId = 153;")or die(mysqli_error($connection));
         header("Location:dashboard.php");
        
     }
 }
 
-function verifyEmpty($name,$email,$Role){
-    if(empty($name) || empty($Email) || empty($Role))
+function verifyEmpty($username,$email){
+    if(empty($username) || empty($email))
     return true;
     return false;
 }
@@ -60,23 +62,25 @@ while($res=mysqli_fetch_array($result)){
 <!-- <link rel="stylesheet" href="StiliEdit.css"> -->
 </head>
 <body>
+
 <div id="div1">
 <h3>Ndrysho User-in</h3>
+
 <form id="formaProduktit" method="post" action="editUser.php" role="form">
-Emri:<input type ="text " value='<?php  echo $username;  ?>'>
+Emri:<input type ="text " name="username" value='<?php  echo $username;  ?>'>
 <p></p>
-Email:<input type="email" value='<?php echo $email; ?>'>
+Email:<input type="email" name="email" value='<?php echo $email; ?>'>
 <p></p>
-<label for="role">Choose a Role:</label>
+<label name="role" for="role">Choose a Role:</label>
 
-<select name="numbers" id="role">
-
-  <option value="1">0</option>
-  <option value="2">1</option>
+<select name="role" id="role" >
+<option name="role" selected="selected"><?php echo $role; ?></option>
+  <option name="role" value="0">0</option>
+  <option name="role" value="1">1</option>
 </select>
 <p></p>
 <input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
-<input type="submit" name="update" id="buton1"  value="Update">
+<input type="submit" id="buton1" name="update"   value="Update">
  <button id="buton1"><a href="dashboard.php">Dashboard</a></button>
                       </form>
 </div>

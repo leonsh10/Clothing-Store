@@ -22,10 +22,8 @@ if(isset($_POST['submit'])){
     else{
         header('Location:login.php');
     }
-
 }
 else{
-
 }
 
 function verifyEmpty($username,$password,$email){
@@ -50,22 +48,22 @@ class RegisterLogic
     public function insertData()
     {
         $user = new SimpleUser($this->username, $this->password,$this->email,0);
-
         $mapper = new UserMapper();
         $mapper->insertUser($user);
         header("Location:login.php");
     }
 }
-if (isset($_GET['userId'])) {
-    $name=$_POST['username'];
-    $email=$_POST['email'];
-    $role = $_POST['role'];
-    $password=$_POST['password'];
+// if (isset($_GET['userId'])) {
+//     $name=$_POST['username'];
+//     $email=$_POST['email'];
+//     $role = $_POST['role'];
+//     $password=$_POST['password'];
     
-    $user = new SimpleUser($name,$email, $role, $password);
-    $mapper = new UserMapper();
-    $mapper->edit($user, $id);
-    header("Location:dashboard.php");
-}
+//     $user = new SimpleUser($name,$email, $role, $password);
+//     $mapper = new UserMapper();
+//     $mapper->edit($user, $id);
+//     header("Location:dashboard.php");
+// }
+
 
 ?>

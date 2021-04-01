@@ -10,7 +10,7 @@ $qmimi = $_POST['qmimiProduktit'];
 $foto=$_POST['fotoProduktit'];
 
 if(verifyEmpty($name,$pershkrimi,$qmimi,$foto)){
-    echo 'Ploteso te dhenat';
+    header('Location:edit.php?error');
 }
 
 else{
@@ -52,6 +52,15 @@ while($res=mysqli_fetch_array($result)){
 <h3>Ndrysho Produktin</h3>
 <form id="formaProduktit" method="post" action="edit.php" role="form">
 <p></p>
+<div id="errori" style="height:30px;margin-top:-15px; color:red;font-family: montserrat, sans-serif;text-align:center; ">
+        <?php
+                $Msg="";
+                if(isset($_GET['error'])){
+            $Msg=" Ploteso te gjitha te dhenat!! ";
+            echo $Msg;    
+                }
+                ?>
+                </div>
 Emri i Produktit:                    
                     <input type="text" id="pName"  size="20" value="<?php echo $name; ?>" name="emri" > 
                     <p></p>

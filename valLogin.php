@@ -59,6 +59,7 @@ private function usernameAndPasswordCorrect($username, $password)
         if ($user['role'] == 1) {
             $obj = new Admin($user['username'], $user['password'],$user['email'], $user['role']);
             $obj->setSession();
+            $_SESSION['username']=$_REQUEST['username'];
         } else {
             $obj = new SimpleUser($user['username'], $user['password'],$user['email'], $user['role']);
             $obj->setSession();
