@@ -3,7 +3,7 @@ include_once 'userMapper.php';
 include_once 'databaseConfig.php';
 include_once 'products.php';
 session_start();
-echo $_SESSION['username'];
+$emri=$_SESSION['username'];
 if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
     $mapper =  new UserMapper();
     $userList = $mapper->getAllUsers();
@@ -21,7 +21,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
 <html>
 <head>
 <title>Dashboard</title>
-<link rel="stylesheet" href="stiliDashboard/dashboard.css">
+<link rel="stylesheet" href="stiliDashboard/Dashboard.css">
 </head>
 <body>
 <header>
@@ -29,7 +29,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
             <ul id="headmUL">
 
                 <li class="listaHeader"><a href="index.php">HOME</a></li>
-                <li class="listaHeader"><a href="shop.php">NEWS</a></li>
+                <li class="listaHeader"><a href="news.php">NEWS</a></li>
               
                 <?php
       if (isset($_SESSION['role']) && $_SESSION['role'] =='1')  {
@@ -47,7 +47,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                 <li>
                 </li>
                 <li class="listaHeader"><a href="aboutUs.php">ABOUT</a></li>
-                <li class="listaHeader"><a href="news.php">SHOP</a></li>
+                <li class="listaHeader"><a href="shop.php">SHOP</a></li>
                 <li class="listaHeader"><a href="contact.php">CONTACT</a></li>
                 <?php
       if (isset($_SESSION['role']))  {
@@ -72,6 +72,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
 
 
     <div>
+    
         <h2 id="titulliTabeles">User list</h2>
         <table>
             <thead>
@@ -146,10 +147,42 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
     </div>
 
 
+    <!-- <h2 id="titulliTabeles2">About Us</h2>
+                <div id="aboutUs">
+                
+                    <div id="aboutUsForma">
+                            <form>
+                            <p></p>
+                            Title:<input type="text" name="title">
+                            Title2:<input type="text" name="title2">
+                            <input type="submit" id="submit" name="submit" value="Add">
+                            <p></p>
+                            SubTitle:<input type="text" name="subTitle">
+                            Emri1:<input type="text" name="emri1">
+                            Emri2:<input type="text" name="emri2">
+                            <p></p>
+                            Texti:<textarea name="pershkrimi" id="" cols="30" rows="10"></textarea>
+                            Puntori:<textarea name="pershkrimiPuntorit" id="" cols="30" rows="10"></textarea>
+                            Skills:<textarea name="skills" id="" cols="30" rows="10"></textarea>
+                            <p></p>
+                            Thenja:<input type="text" size="55" name="thenja">
+                            
+                            <p></p>
+                           
+                            
+                            </form>
+
+                    </div>
+
+                </div> -->
+    
+
+
             <div id="produkti">
             
                 <div id="formaP">
                 <form id="formaProduktit" method ="POST" action="valProducts.php" >
+                <h4 style="margin:0; margin-right:560px; color:red; border:1px solid #babeff ;justify-content:start;">User:<?php  echo $emri?></h4>
                 <h3>Shto Produkt</h3>
                 <div id="errori" style="height:30px;margin-top:-15px; color:red;font-family: montserrat, sans-serif;text-align:center; ">
         <?php
@@ -230,7 +263,8 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                         
                                     </div>
                 </form>
-                      
+
+               
 
                   
 
@@ -253,7 +287,19 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                     <li><a href="news.php">News</a></li>
                     <li><a href="aboutUs.php">About Us</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
-                    <li><a href="login.php">Login</a></li>
+                    <?php
+      if (isset($_SESSION['role']))  {
+      ?>
+        <li class="listaHeader"><a href="logout.php">Logout</a></li>  
+      <?php
+      }
+      else{
+          ?>
+          
+        <li class="listaHeader"><a href="login.php">Login</a></li>  
+        <?php
+      }
+      ?>
                 </ul>
             </div>
             <div id="divLD">

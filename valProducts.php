@@ -9,9 +9,7 @@ if(isset($_POST['submit'])){
     $qmimiP=$_POST['qmimiProduktit'];
     $fotoP=$_POST['fotoProduktit'];
     $emriP=$_POST['emri'];
-   
-    
-if(verifyEmpty($emriP,$pershkrimiP,$qmimiP,$fotoP)){
+    if(verifyEmpty($emriP,$pershkrimiP,$qmimiP,$fotoP)){
     header('Location:dashboard.php?error');
 }
 

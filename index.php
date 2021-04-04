@@ -16,7 +16,7 @@ session_start();
         <div id="headerMajtas">
             <ul id="headmUL">
                 <li class="listaHeader"><a href="index.php">HOME</a></li>
-                <li class="listaHeader"><a href="shop.php">NEWS</a></li>
+                <li class="listaHeader"><a href="news.php">NEWS</a></li>
                 <?php
       if (isset($_SESSION['role']) && $_SESSION['role'] =='1')  {
       ?>
@@ -35,7 +35,7 @@ session_start();
                     </form>
                 </li>
                 <li class="listaHeader"><a href="aboutUs.php">ABOUT</a></li>
-                <li class="listaHeader"><a href="news.php">SHOP</a></li>
+                <li class="listaHeader"><a href="shop.php">SHOP</a></li>
                 <li class="listaHeader"><a href="contact.php">CONTACT</a></li>
                 <?php
       if (isset($_SESSION['role']))  {
@@ -96,7 +96,7 @@ foreach($query_run as $row)
     <div id="thirdDiv">
 <?php
  
-$query2="select * from produktet";
+$query2="select * from produktet where emriProduktit not like 'Just in Suits'";
 $query_run2=mysqli_query($connection,$query2);
 
 while($row = mysqli_fetch_array($query_run2) ){
@@ -133,7 +133,19 @@ while($row = mysqli_fetch_array($query_run2) ){
                     <li><a href="news.php">News</a></li>
                     <li><a href="aboutUs.php">About Us</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
-                    <li><a href="login.php">Login</a></li>
+                    <?php
+      if (isset($_SESSION['role']))  {
+      ?>
+        <li class="listaHeader"><a href="logout.php">Logout</a></li>  
+      <?php
+      }
+      else{
+          ?>
+          
+        <li class="listaHeader"><a href="login.php">Login</a></li>  
+        <?php
+      }
+      ?>
                 </ul>
             </div>
             <div id="divLD">

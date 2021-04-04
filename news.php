@@ -81,53 +81,26 @@ session_start();
         }
             ?>
             </div>
-
-        
-            <?php
-
-$query2="select * from news";
-$query_run2=mysqli_query($connection,$query2);
-
-if(mysqli_num_rows($query_run2) > 0 )
-{
-
-foreach($query_run2 as $row)
-{
-    ?>
-
             <div id="pjesaDyte">
-
-            <div id="foto1">
-                        <a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto1'] ).'"/>'; ?></a>
-                        <h3><?php echo $row['tekstiBold'];?></h3>
-                        <p><?php echo $row['teksti2'];?></p>
-                        <p class="qmimi1"><?php echo $row['teksti3'];?></p>
-                </div>
-                <div id="foto2">
-                    <a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto2'] ).'"/>'; ?></a>
-                    <h3><?php echo $row['tekstiBold'];?></h3>
-                        <p><?php echo $row['teksti2'];?></p>
-                        <p class="qmimi1"><?php echo $row['teksti3'];?></p>
-                </div>
-                <div id="foto3">
-                    <a href="#"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['foto3'] ).'"/>'; ?></a>
-                    <h3><?php echo $row['titulli1'];?></h3>
-                        <p><?php echo $row['teksti2'];?></p>
-                        <p class="qmimi1"><?php echo $row['teksti3'];?></p>
-                </div>
-                
-            </div>
             <?php
-
-}
-}
-?>
-
-        </div>
-     
+ 
+ $query2="select * from produktet where emriProduktit  like 'Just in Suits'";
+ $query_run2=mysqli_query($connection,$query2);
+ 
+ while($row = mysqli_fetch_array($query_run2) ){
+     ?>
+            
+           
+                <div id="foto1">                        
+                     <a href="#"><?php echo '<img src="images/'.$row['fotoProduktit'].'"width="200px;" height="200px;"' ?></a></a>
+                        <h3><?php echo $row['emriProduktit']; ?></h3>
+                        <p><?php echo $row['pershkrimiProduktit'];?></p>
+                        <p class="qmimi1"><?php echo $row['qmimiProduktit']; ?>$</p>
+                 </div>       
+             <?php } ?>
+             </div>
     </main>
-
-        <footer>
+      <footer>
             <div id="diviPosht">
                 <div id="vija">
                     <div></div>

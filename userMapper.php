@@ -20,9 +20,7 @@ class UserMapper extends DatabasePDOConfiguration
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
-
-
-
+    
     public function getUserByUsername($username)
     {
         $this->query = "select * from user where username=:username";

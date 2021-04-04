@@ -17,7 +17,7 @@
                 <ul id="headmUL">
 
                     <li class="listaHeader"><a href="index.php">HOME</a></li>
-                    <li class="listaHeader"><a href="shop.php">NEWS</a></li>
+                    <li class="listaHeader"><a href="news.php">NEWS</a></li>
 
 
                 </ul>
@@ -27,7 +27,7 @@
                     <li>
                     </li>
                     <li class="listaHeader"><a href="aboutUs.php">ABOUT</a></li>
-                    <li class="listaHeader"><a href="news.php">SHOP</a></li>
+                    <li class="listaHeader"><a href="shop.php">SHOP</a></li>
                     <li class="listaHeader"><a href="contact.php">CONTACT</a></li>
                     <li class="listaHeader"><a href="login.php">LOGIN</a></li>
                 </ul>

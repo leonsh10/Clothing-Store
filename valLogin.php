@@ -10,6 +10,7 @@ session_start();
 if (isset($_POST['submit'])) {
     $login = new LoginLogic($_POST);
     $login->verifyData();
+    
 } 
  else {
     header("Location:login.php");
