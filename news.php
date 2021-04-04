@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head>
-        <TITLE>SHOP</TITLE>
+        <TITLE>NEWS</TITLE>
         <link rel="stylesheet" href="stiliNews/news.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -14,7 +14,7 @@ session_start();
             <div id="headerMajtas">
                 <ul id="headmUL">
                     <li class="listaHeader"><a href="index.php">HOME</a></li>
-                    <li class="listaHeader"><a href="shop.php">NEWS</a></li>
+                    <li class="listaHeader"><a href="news.php">NEWS</a></li>
                     <?php
       if (isset($_SESSION['role']) && $_SESSION['role'] =='1')  {
       ?>
@@ -34,7 +34,7 @@ session_start();
                         </form>
                     </li>
                     <li class="listaHeader"><a href="aboutUs.php">ABOUT</a></li>
-                <li class="listaHeader"><a href="news.php">SHOP</a></li>
+                <li class="listaHeader"><a href="shop.php">SHOP</a></li>
                 <li class="listaHeader"><a href="contact.php">CONTACT</a></li>
                 <?php
       if (isset($_SESSION['role']))  {
@@ -56,30 +56,11 @@ session_start();
     <main>
         <div id="kryesore">
             <div id="pjesaPare">
-            <?php
-            require 'databaseConfig.php';
-
-            $query="select * from news";
-            $query_run=mysqli_query($connection,$query);
-            
-            if(mysqli_num_rows($query_run) > 0 )
-            {
-            
-            foreach($query_run as $row)
-            {
-
-            ?>
                 <div id="zbritjaDiv">
-                   <h3 id="epara"><?php echo $row['titulli1'];?></h3>
-                   <h3 id="dyta"><?php echo $row['titulli2'];?></h3>
-                   <button id="treta" name='button1'><?php echo $row['butoni'];?></button>
+                   <h3 id="epara">NEW ARRIVALS</h3>
+                   <h3 id="dyta">COLLECTION</h3>
+                   <button id="treta" name='button1'>BUY NOW</button>
                 </div>
-            
-
-            <?php
-            }
-        }
-            ?>
             </div>
             <div id="pjesaDyte">
             <?php

@@ -9,7 +9,6 @@ session_start();
     <title>HomePage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
 
     <header>
@@ -57,46 +56,30 @@ session_start();
     </header>
 
     <main>
-    <?php
-require 'databaseConfig.php';
-
-$query="select * from homepage";
-$query_run=mysqli_query($connection,$query);
-
-if(mysqli_num_rows($query_run) > 0 )
-{
-
-foreach($query_run as $row)
-{
-
-    ?>
+    
         <div id="mainDiv">
             <!-- <div id="mainImage"> -->
                 <!-- <img src="images/mainImg.jfif"> -->
                 <div id="qender">
-                    <h1 id="head1"><?php echo $row['titulliLart'];?></h1>
-                    <button id="butoni1" type="button"><?php echo $row['butoni1'];?></button>
+                    <h1 id="head1">Spring Collection</h1>
+                    <button id="butoni1" type="button">SHOP WOMEN</button>
                 </div>
             <!-- </div> -->
         </div>
 
         <div id="secondDiv">
             <div id="teksti">
-                <p id="headeri-posht"><?php echo $row['titulliMes'];?></p>
+                <p id="headeri-posht">Featured Collection</p>
                 <div id="lines">
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
             </div>
-            
-            <?php 
-            }
-        }?>
     <div id="thirdDiv">
 <?php
- 
-$query2="select * from produktet where emriProduktit not like 'Just in Suits'";
+ require 'databaseConfig.php';
+$query2="select * from produktet where pershkrimiProduktit like 'Coat For Men'";
 $query_run2=mysqli_query($connection,$query2);
 
 while($row = mysqli_fetch_array($query_run2) ){

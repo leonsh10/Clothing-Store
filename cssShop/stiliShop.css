@@ -10,7 +10,7 @@ body{
 
 main{
     width:100%;
-    height: 550px;
+    height:auto;
 }
   .img-slider{
    
@@ -387,6 +387,48 @@ form.example input[type=text] {
 
 #treta:hover{
     opacity:1;
+}
+
+/*
+divi i dyte ketuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+*/
+
+#pjesaDyte{
+    width:90%;
+    height:auto;
+    /* border:1px solid black; */
+    margin:0 auto;
+    margin-top:35px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#foto1{
+    width:33.3%;
+    height:600px;
+    /* border:1px solid green; */
+    margin:0 auto;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    
+}
+#foto1 img{
+    width:95%;
+    height:490px;
+    opacity:0.9;
+}
+
+#foto1 img:hover{
+    opacity:1;
+}
+
+#foto1 p,h3{
+    text-align: start;
+    margin-left:7px;
+    font-family: sans-serif;
+    padding-left: 7px;
+    margin-top: 5px;  
 }
 
 

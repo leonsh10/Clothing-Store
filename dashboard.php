@@ -80,6 +80,7 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                     <td >ID</td>
                     <td >Emri</td>
                     <td >Email</td>
+                    <td>Role</td>
                     <td >Fshij/Edit</td>
                 </tr>
             </thead>
@@ -94,7 +95,8 @@ if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
                                     <td><?php echo $user['userId']; ?></td>
                                         <td><?php echo $user['username']; ?></td>
                                         <td><?php echo $user['email']; ?></td>
-                                        <td><button id="butonFshij"><a style="text-decoration:none;" href=<?php echo "deleteUser.php?id=" . $user['userId'];
+                                        <td><?php echo $user['role']; ?></td>
+                                        <td><button id="butonFshij" style="margin-bottom:10px;"><a style="text-decoration:none;" href=<?php echo "deleteUser.php?id=" . $user['userId'];
                                                     ?>>Fshij</button>
                                                     <button id="butonFshij"><a style="text-decoration:none;" href=<?php echo "editUser.php?id=" . $user['userId'];
                                                     ?>>Edit</button></td>

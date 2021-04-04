@@ -4,9 +4,9 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="cssShop/stiliShop.css">
+    <link rel="stylesheet" href="cssShop/stilishop.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0;">
-    <title>NEWS</title>
+    <title>SHOP</title>
 </head>
 
 <body>
@@ -61,23 +61,23 @@ session_start();
         </div>
       </div>
       <div class="slide">
-        <img src="images/discount3.jpg" alt="">
-        <div class="info">
+        <img src="images/2.jpg" alt="">
+        <!-- <div class="info">
         <div id="zbritjaDiv">
                    <h3 id="epara">NEW ARRIVALS</h3>
                    <h3 id="dyta">COLLECTION</h3>
                    <button id="treta" name='button1'>SHOP NOW</button>
                 </div>
-                </div>
+                </div> -->
       </div>
       <div class="slide">
-        <img src="images/discount5.jpeg" alt="">
-        <div class="info3">
+        <img src="images/1.png" alt="">
+        <!-- <div class="info3">
           <p>Classic Suit</p>
           <button id="butoni5" type="button">SHOP NOW</button>
-                </div>
+                </div> -->
       </div>
-      <div class="slide">
+      <!-- <div class="slide">
         <img src="images/discount3.jpg" alt="">
         <div class="info">
         <div id="zbritjaDiv">
@@ -86,8 +86,8 @@ session_start();
                    <button id="treta" name='button1'>SHOP NOW</button>
                 </div>
                 </div>
-      </div>
-      <div class="slide">
+      </div> -->
+      <!-- <div class="slide">
         <img src="images/discount3.jpg" alt="">
         <div class="info">
         <div id="zbritjaDiv">
@@ -96,15 +96,34 @@ session_start();
                    <button id="treta" name='button1'>SHOP NOW</button>
                 </div>
                 </div>
-      </div>
+      </div> -->
       <div class="navigation">
         <div class="btn active"></div>
         <div class="btn"></div>
         <div class="btn"></div>
-        <div class="btn"></div>
-        <div class="btn"></div>
+        <!-- <div class="btn"></div> -->
+        <!-- <div class="btn"></div> -->
       </div>
     </div>
+
+    <div id="pjesaDyte">
+    <?php
+ require 'databaseConfig.php';
+ $query2="select * from produktet";
+ $query_run2=mysqli_query($connection,$query2);
+ 
+ while($row = mysqli_fetch_array($query_run2) ){
+     ?>
+                <div id="foto1">                        
+                     <a href="#"><?php echo '<img src="images/'.$row['fotoProduktit'].'"width="200px;" height="200px;"' ?></a></a>
+                        <h3><?php echo $row['emriProduktit']; ?></h3>
+                        <p><?php echo $row['pershkrimiProduktit'];?></p>
+                        <p class="qmimi1"><?php echo $row['qmimiProduktit']; ?>$</p>
+                 </div>       
+             <?php } ?>
+
+    </div>
+
     </main>
 
     <footer>
@@ -187,7 +206,7 @@ session_start();
           return;
         }
         repeater();
-      }, 10000);
+      }, 5000);
       }
       repeater();
     }
