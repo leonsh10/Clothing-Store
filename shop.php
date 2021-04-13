@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="cssShop/stilishop.css">
+    <link rel="stylesheet" href="cssShop/stiliShop.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0;">
     <title>SHOP</title>
 </head>

@@ -27,8 +27,6 @@ main{
     margin:0 auto;
   }
   
- 
-  
   .img-slider .slide{
     z-index: 1;
     position: absolute;
@@ -519,6 +517,17 @@ footer{
     width:100%;
     font-size:22px;
     
+}
+
+#pjesaDyte{
+    flex-direction: column;
+    width:500px;
+    margin-left:32px;
+}
+
+#foto1{
+    width:fit-content;
+    margin:0 auto;
 }
 
 }

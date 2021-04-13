@@ -443,8 +443,9 @@ body{
     width: fit-content;
     height:fit-content;
     align-items: center;
+    margin-top:25px;
 }
-#foto2{
+/* #foto2{
     width: fit-content;
     height:fit-content;
     align-items: center;
@@ -455,7 +456,7 @@ body{
     height:fit-content;
     align-items: center;
     margin-top:27px;
-}
+} */
 
 #kryesore{
     min-height: 2100px;
@@ -463,5 +464,20 @@ body{
 
 #diviFundit{
     width:91%;
+}
+
+#pjesaDyte{
+    display:flex;
+    flex-direction: column;
+}
+
+#titull{
+    text-align:center;
+}
+#paragrafi{
+    text-align-last:center;
+}
+#qmimi{
+    text-align-last: center;
 }
  }

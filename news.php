@@ -5,10 +5,9 @@ session_start();
 <html>
     <head>
         <TITLE>NEWS</TITLE>
-        <link rel="stylesheet" href="stiliNews/news.css">
+        <link rel="stylesheet" href="stiliNews/News.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-
     <body>
         <header>
             <div id="headerMajtas">
@@ -64,19 +63,17 @@ session_start();
             </div>
             <div id="pjesaDyte">
             <?php
- 
+ require 'databaseConfig.php';
  $query2="select * from produktet where emriProduktit  like 'Just in Suits'";
  $query_run2=mysqli_query($connection,$query2);
  
  while($row = mysqli_fetch_array($query_run2) ){
      ?>
-            
-           
-                <div id="foto1">                        
+        <div id="foto1">                        
                      <a href="#"><?php echo '<img src="images/'.$row['fotoProduktit'].'"width="200px;" height="200px;"' ?></a></a>
-                        <h3><?php echo $row['emriProduktit']; ?></h3>
-                        <p><?php echo $row['pershkrimiProduktit'];?></p>
-                        <p class="qmimi1"><?php echo $row['qmimiProduktit']; ?>$</p>
+                        <h3 id="titull"><?php echo $row['emriProduktit']; ?></h3>
+                        <p id="paragrafi"><?php echo $row['pershkrimiProduktit'];?></p>
+                        <p id="qmimi" class="qmimi1"><?php echo $row['qmimiProduktit']; ?>$</p>
                  </div>       
              <?php } ?>
              </div>
