@@ -104,19 +104,19 @@ class UserMapper extends DatabasePDOConfiguration
         $statement->execute();
     }
 
-    public function editProduct(\products $product1, $idP)
+    public function editProduct(\products $product1, $id)
     {
-        $this->query = "update produktet set emriProduktit=:emri, pershkrimiProduktit=:perPr, qmimiProduktit=:qmimiP , fotoProduktit =:fotoP where idProduktit=:idP";
+        $this->query = "update produktet set emriProduktit=:emriProduktit, pershkrimiProduktit=:pershkrimiProduktit, qmimiProduktit=:qmimiProduktit , fotoProduktit =:fotoProduktit where idProduktit=:idProduktit";
         // var_dump($product1);
         $statement = $this->conn->prepare($this->query);
-        $emri = $product1->getEmri();
-        $perPr = $product1->getPershkrimi();
-        $qmimiP = $product1 ->getQmimi();
-        $fotoP = $product1 -> getFoto();
-        $statement->bindParam(":emriProduktit", $emri);
-        $statement->bindParam(":pershkrimiProduktit", $perPr);
-        $statement->bindParam(":QmimiProduktit", $qmimiP);
-        $statement->bindParam(":fotoProduktit", $fotoP);
+        $emriProduktit = $product1->getEmri();
+        $pershkrimiProduktit = $product1->getPershkrimi();
+        $qmimiProduktit = $product1 ->getQmimi();
+        $fotoProduktit = $product1 -> getFoto();
+        $statement->bindParam(":emriProduktit", $emriProduktit);
+        $statement->bindParam(":pershkrimiProduktit", $pershkrimiProduktit);
+        $statement->bindParam(":qmimiProduktit", $qmimiProduktit);
+        $statement->bindParam(":fotoProduktit", $fotoProduktit);
         $statement->bindParam(":idProduktit", $id);
         $statement->execute();
     }

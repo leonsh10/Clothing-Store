@@ -2,6 +2,7 @@
 
 include_once 'userMapper.php';
 include_once 'databaseConfig.php';
+require_once 'products.php';
 if(isset($_POST['update'])){
 $id = isset($_POST['idProduktit']) ? $_POST['idProduktit'] : '';
 $name=$_POST['emri'];
@@ -13,8 +14,15 @@ if(verifyEmpty($name,$pershkrimi,$qmimi,$foto)){
     header('Location:edit.php?error');
 }
 
+// else{
+//     $result = mysqli_query($connection,"UPDATE produktet SET emriProduktit='$name',pershkrimiProduktit='$pershkrimi',qmimiProduktit='$qmimi',fotoProduktit='$foto' WHERE idProduktit = $id;");
+//     header("Location:dashboard.php");
+// }
+
 else{
-    $result = mysqli_query($connection,"UPDATE produktet SET emriProduktit='$name',pershkrimiProduktit='$pershkrimi',qmimiProduktit='$qmimi',fotoProduktit='$foto' WHERE idProduktit = $id;");
+    $product = new products($name,$pershkrimi, $qmimi, $foto);
+    $mapper = new UserMapper();
+    $mapper->editProduct($product,$id);
     header("Location:dashboard.php");
 }
 

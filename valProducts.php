@@ -53,16 +53,4 @@ class ProductsLogic
         header("Location:dashboard.php");
     }
 }
-//Per edit
-if (isset($_POST['submit2'])) {
-    $idP = $_POST['idProduktit'];
-    $emriP = $_POST['emriProduktit'];
-    $pershkP = $_POST['pershkrimiProduktit'];
-    $qmimiP = $_POST['qmimiProduktit'];
-    $fotoP = $_POST['fotoProduktit'];
-    $product1 = new products($emriP,$pershkP, $qmimiP, $fotoP);
-    $mapper = new UserMapper();
-    $mapper->editProduct($product1, $idP);
-    header("Location:dashboard.php");
-}
 ?>

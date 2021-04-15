@@ -5,7 +5,7 @@ include_once 'databaseConfig.php';
 include_once 'simpleUserClass.php';
 include_once 'products.php';
 if(isset($_POST['update'])){
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_POST['id']) ? $_POST['id'] : '';
     $username = $_POST['username'];
     $email =$_POST['email'];
     $role = $_POST['role'];
@@ -14,26 +14,19 @@ if(isset($_POST['update'])){
         echo 'Ploteso te dhenat';
     }
 
-    // {
-    // $simpleUser = new SimpleUser($username,'',$email,$role);
-    // $mapper = new UserMapper();
-    // $mapper->edit($simpleUser, $id);
-    // // header("Location:dashboard.php");
-    // }
-
-  
-        // $edit = new SimpleUser($name,$email,$password,$role);
-        // $mapper = new UserMapper();
-        // $mapper->edit($edit,$userId);
-        // header('Location:dashboard.php');
-    
-    
-   
-    else{
-        $result = mysqli_query($connection,"UPDATE user SET username='$username',email='$email',role='$role'  WHERE userId = 153;")or die(mysqli_error($connection));
-        header("Location:dashboard.php");
-       
+   else{
+    $simpleUser = new SimpleUser($username,'',$email,$role);
+    $mapper = new UserMapper();
+    $mapper->edit($simpleUser, $id);
+    header("Location:dashboard.php");
     }
+
+   
+    // else{
+    //     $query=("UPDATE user SET username='$username',email='$email',role='$role'  WHERE userId =$id;");
+    //     $result = mysqli_query($connection,$query);
+    //     header("Location:dashboard.php");
+    // }
 }
 
 function verifyEmpty($username,$email){
