@@ -1,7 +1,5 @@
 <?php
 
-$connection =mysqli_connect("localhost","root","","projekti");
-
 class DatabasePDOConfiguration
 {
     private $connection;
@@ -52,4 +50,5 @@ class Contact{
         return $this->mysqli->query($q);      
     }
 }
+$connection =mysqli_connect("localhost","root","","projekti");
 ?>
